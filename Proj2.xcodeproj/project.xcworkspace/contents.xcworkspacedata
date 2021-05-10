@@ -2,21 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Proj2/AppDelegate.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../Proj2/Assets.xcassets">
-   </FileRef>
-   <FileRef
-      location = "group:../Proj2/Base.lproj">
-   </FileRef>
-   <FileRef
-      location = "group:../Proj2/Info.plist">
-   </FileRef>
-   <FileRef
-      location = "group:../Proj2/SceneDelegate.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../Proj2/ViewController.swift">
+      location = "self:">
    </FileRef>
 </Workspace>
