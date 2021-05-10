@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Proj2
+//  proj2
 //
 //  Created by Daivion Prater on 5/10/21.
 //
