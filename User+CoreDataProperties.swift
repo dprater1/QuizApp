@@ -16,12 +16,13 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
+    @NSManaged public var comments: NSObject?
     @NSManaged public var correctAnswered: Int64
     @NSManaged public var password: String?
     @NSManaged public var subscribed: Bool
     @NSManaged public var totalAnswered: Int64
     @NSManaged public var username: String?
-    @NSManaged private var comments: [Comment]?
+    @NSManaged public var isBlocked: Bool
     @NSManaged public var user: NSSet?
 
 }

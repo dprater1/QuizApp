@@ -27,6 +27,7 @@ class DBHelper{
         user.totalAnswered = 0
         user.correctAnswered = 0
         user.subscribed = false
+        user.isBlocked = false
 
         do{
             try context.save()
@@ -94,6 +95,28 @@ class DBHelper{
         }
         catch{
             return false
+        }
+    }
+    
+    func changeAccess(query : String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+          }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
+        
+        fetchReq.predicate = NSPredicate(format: "username == %@", query)
+        
+        do{
+            let usr = try context.fetch(fetchReq)
+            for data in usr{
+                let user = data as! User
+                let val = user.value(forKey: "isBlocked") as! Bool
+                    user.setValue(!val, forKey: "isBlocked")
+            }
+        }
+        catch let error{
+            print("error: ", error)
         }
     }
 }
