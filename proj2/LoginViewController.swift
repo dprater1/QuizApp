@@ -50,25 +50,28 @@ class LoginViewController: UIViewController {
         let inputData = Data(inputString.utf8)
         let hashed = SHA256.hash(data: inputData)
         //print(hashed)
-        if (uName.text! == "Admin" && uPass.text! == "Pass123"){
-            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
-            present(wel, animated: true, completion: nil)
-        }
-        else if(DBHelper.inst.validatePass(uName: uName.text!, uPass: String(describing: hashed))){
-                
+    
+        if(DBHelper.inst.validatePass(uName: uName.text!, uPass: String(describing: hashed))){
+            
+            if(uName.text! == "Admin"){
+                let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
+                present(wel, animated: true, completion: nil)
+            }
+            else{
                 print("username and password matched")
                 ud.setValue(uName.text, forKey: "currUser")
                 let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
                 present(wel, animated: true, completion: nil)
             }
-            else{
-                let altit = "Incorrect username or password."
-                let alMess = "Please try again"
-                let alert = UIAlertController(title: altit, message: alMess, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+        }
+        else{
+            let altit = "Incorrect username or password."
+            let alMess = "Please try again"
+            let alert = UIAlertController(title: altit, message: alMess, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
                 
                 
             }
