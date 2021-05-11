@@ -21,6 +21,9 @@
 		8449E7A52649AD20005B4D68 /* Quiz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79F2649AD20005B4D68 /* Quiz+CoreDataClass.swift */; };
 		8449E7A62649AD20005B4D68 /* Quiz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E7A02649AD20005B4D68 /* Quiz+CoreDataProperties.swift */; };
 		8449E7A92649AD39005B4D68 /* question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E7A82649AD39005B4D68 /* question.swift */; };
+		8449E810264A3146005B4D68 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E80F264A3146005B4D68 /* SignupViewController.swift */; };
+		8449E813264A3230005B4D68 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E812264A3230005B4D68 /* DBHelper.swift */; };
+		8449E816264A3474005B4D68 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E815264A3474005B4D68 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		8449E79F2649AD20005B4D68 /* Quiz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8449E7A02649AD20005B4D68 /* Quiz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8449E7A82649AD39005B4D68 /* question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = question.swift; sourceTree = "<group>"; };
+		8449E80F264A3146005B4D68 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		8449E812264A3230005B4D68 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		8449E815264A3474005B4D68 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,9 @@
 				4059777C2649A41F0093870E /* Info.plist */,
 				405977742649A41D0093870E /* proj2.xcdatamodeld */,
 				8449E7A82649AD39005B4D68 /* question.swift */,
+				8449E80F264A3146005B4D68 /* SignupViewController.swift */,
+				8449E812264A3230005B4D68 /* DBHelper.swift */,
+				8449E815264A3474005B4D68 /* LoginViewController.swift */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
@@ -161,17 +170,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8449E816264A3474005B4D68 /* LoginViewController.swift in Sources */,
 				8449E7A92649AD39005B4D68 /* question.swift in Sources */,
 				8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */,
 				405977702649A41D0093870E /* ViewController.swift in Sources */,
 				8449E7A62649AD20005B4D68 /* Quiz+CoreDataProperties.swift in Sources */,
 				8449E7A42649AD20005B4D68 /* User+CoreDataProperties.swift in Sources */,
 				4059776C2649A41D0093870E /* AppDelegate.swift in Sources */,
+				8449E810264A3146005B4D68 /* SignupViewController.swift in Sources */,
 				4059776E2649A41D0093870E /* SceneDelegate.swift in Sources */,
 				8449E7A22649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift in Sources */,
 				405977762649A41E0093870E /* proj2.xcdatamodeld in Sources */,
 				8449E7A32649AD20005B4D68 /* User+CoreDataClass.swift in Sources */,
 				8449E7A52649AD20005B4D68 /* Quiz+CoreDataClass.swift in Sources */,
+				8449E813264A3230005B4D68 /* DBHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
