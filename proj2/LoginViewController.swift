@@ -52,16 +52,23 @@ class LoginViewController: UIViewController {
         //print(hashed)
     
         if(DBHelper.inst.validatePass(uName: uName.text!, uPass: String(describing: hashed))){
-            
+            if(remSwitch.isOn){
+                
+                ud.setValue(uName.text, forKey: "uName")
+                ud.setValue(true, forKey: "rem")
+                ud.setValue(uPass.text, forKey: "uPass")
+                
+            }
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             if(uName.text! == "Admin"){
-                let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
+                
+                let wel = sb.instantiateViewController(withIdentifier: "Admin") as! ViewController
                 present(wel, animated: true, completion: nil)
             }
             else{
                 print("username and password matched")
                 ud.setValue(uName.text, forKey: "currUser")
-                let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
                 let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
                 present(wel, animated: true, completion: nil)
             }
@@ -76,14 +83,6 @@ class LoginViewController: UIViewController {
                 
             }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
