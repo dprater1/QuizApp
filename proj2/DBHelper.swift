@@ -26,6 +26,7 @@ class DBHelper{
         user.password = object["password"]
         user.totalAnswered = 0
         user.correctAnswered = 0
+        user.subscribed = false
 
         do{
             try context.save()

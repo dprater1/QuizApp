@@ -50,37 +50,39 @@ class LoginViewController: UIViewController {
         let inputData = Data(inputString.utf8)
         let hashed = SHA256.hash(data: inputData)
         //print(hashed)
-        if (uName.text! == "Admin" && uPass.text! == "Pass123"){
-            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
-            present(wel, animated: true, completion: nil)
-        }
-        else if(DBHelper.inst.validatePass(uName: uName.text!, uPass: String(describing: hashed))){
+    
+        if(DBHelper.inst.validatePass(uName: uName.text!, uPass: String(describing: hashed))){
+            if(remSwitch.isOn){
                 
-                print("username and password matched")
-                ud.setValue(uName.text, forKey: "currUser")
-                let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
+                ud.setValue(uName.text, forKey: "uName")
+                ud.setValue(true, forKey: "rem")
+                ud.setValue(uPass.text, forKey: "uPass")
+                
+            }
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            if(uName.text! == "Admin"){
+                
+                let wel = sb.instantiateViewController(withIdentifier: "Admin") as! ViewController
                 present(wel, animated: true, completion: nil)
             }
             else{
-                let altit = "Incorrect username or password."
-                let alMess = "Please try again"
-                let alert = UIAlertController(title: altit, message: alMess, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                print("username and password matched")
+                ud.setValue(uName.text, forKey: "currUser")
+                
+                let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
+                present(wel, animated: true, completion: nil)
+            }
+        }
+        else{
+            let altit = "Incorrect username or password."
+            let alMess = "Please try again"
+            let alert = UIAlertController(title: altit, message: alMess, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
                 
                 
             }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
