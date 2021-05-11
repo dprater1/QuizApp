@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  proj2
 //
-//  Created by admin on 5/10/21.
+//  Created by admin on 5/11/21.
 //
 //
 
@@ -17,9 +17,10 @@ extension User {
     }
 
     @NSManaged public var correctAnswered: Int64
-    @NSManaged public var username: String?
     @NSManaged public var password: String?
     @NSManaged public var totalAnswered: Int64
+    @NSManaged public var username: String?
+    @NSManaged public var subscribed: Bool
     @NSManaged public var user: NSSet?
 
 }
