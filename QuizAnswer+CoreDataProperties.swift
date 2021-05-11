@@ -2,7 +2,7 @@
 //  QuizAnswer+CoreDataProperties.swift
 //  proj2
 //
-//  Created by admin on 5/10/21.
+//  Created by admin on 5/11/21.
 //
 //
 
@@ -16,8 +16,8 @@ extension QuizAnswer {
         return NSFetchRequest<QuizAnswer>(entityName: "QuizAnswer")
     }
 
-    @NSManaged public var answers: [String]?
-    @NSManaged private var questions: [Question]?
+    @NSManaged public var answers: NSObject?
+    @NSManaged public var questions: NSObject?
     @NSManaged public var user: User?
 
 }

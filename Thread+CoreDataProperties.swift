@@ -16,7 +16,7 @@ extension Thread {
         return NSFetchRequest<Thread>(entityName: "Thread")
     }
 
-    @NSManaged private var comments: [Comment]?
+    @NSManaged public var comments: NSObject?
     @NSManaged public var name: String?
 
 }
