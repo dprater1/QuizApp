@@ -24,6 +24,9 @@
 		8449E810264A3146005B4D68 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E80F264A3146005B4D68 /* SignupViewController.swift */; };
 		8449E813264A3230005B4D68 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E812264A3230005B4D68 /* DBHelper.swift */; };
 		8449E816264A3474005B4D68 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E815264A3474005B4D68 /* LoginViewController.swift */; };
+		8449E81B264ADA8E005B4D68 /* comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E81A264ADA8E005B4D68 /* comment.swift */; };
+		8449E81F264ADD1C005B4D68 /* Thread+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E81D264ADD1C005B4D68 /* Thread+CoreDataClass.swift */; };
+		8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E81E264ADD1C005B4D68 /* Thread+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		8449E80F264A3146005B4D68 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		8449E812264A3230005B4D68 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		8449E815264A3474005B4D68 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8449E81A264ADA8E005B4D68 /* comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comment.swift; sourceTree = "<group>"; };
+		8449E81D264ADD1C005B4D68 /* Thread+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8449E81E264ADD1C005B4D68 /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,8 @@
 		4059775F2649A41D0093870E = {
 			isa = PBXGroup;
 			children = (
+				8449E81D264ADD1C005B4D68 /* Thread+CoreDataClass.swift */,
+				8449E81E264ADD1C005B4D68 /* Thread+CoreDataProperties.swift */,
 				8449E79B2649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift */,
 				8449E79C2649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift */,
 				8449E79D2649AD20005B4D68 /* User+CoreDataClass.swift */,
@@ -96,6 +104,7 @@
 				8449E80F264A3146005B4D68 /* SignupViewController.swift */,
 				8449E812264A3230005B4D68 /* DBHelper.swift */,
 				8449E815264A3474005B4D68 /* LoginViewController.swift */,
+				8449E81A264ADA8E005B4D68 /* comment.swift */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
@@ -171,8 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8449E816264A3474005B4D68 /* LoginViewController.swift in Sources */,
+				8449E81F264ADD1C005B4D68 /* Thread+CoreDataClass.swift in Sources */,
 				8449E7A92649AD39005B4D68 /* question.swift in Sources */,
 				8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */,
+				8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */,
 				405977702649A41D0093870E /* ViewController.swift in Sources */,
 				8449E7A62649AD20005B4D68 /* Quiz+CoreDataProperties.swift in Sources */,
 				8449E7A42649AD20005B4D68 /* User+CoreDataProperties.swift in Sources */,
@@ -181,6 +192,7 @@
 				4059776E2649A41D0093870E /* SceneDelegate.swift in Sources */,
 				8449E7A22649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift in Sources */,
 				405977762649A41E0093870E /* proj2.xcdatamodeld in Sources */,
+				8449E81B264ADA8E005B4D68 /* comment.swift in Sources */,
 				8449E7A32649AD20005B4D68 /* User+CoreDataClass.swift in Sources */,
 				8449E7A52649AD20005B4D68 /* Quiz+CoreDataClass.swift in Sources */,
 				8449E813264A3230005B4D68 /* DBHelper.swift in Sources */,
