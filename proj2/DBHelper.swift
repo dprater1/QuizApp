@@ -96,4 +96,49 @@ class DBHelper{
             return false
         }
     }
+    func changeAccess(query : String) {
+           guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+               return
+             }
+           let context = appDelegate.persistentContainer.viewContext
+           let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
+           
+           fetchReq.predicate = NSPredicate(format: "username == %@", query)
+           
+           do{
+               let usr = try context.fetch(fetchReq)
+               for data in usr{
+                   let user = data as! User
+                   let val = user.value(forKey: "isBlocked") as! Bool
+                       user.setValue(!val, forKey: "isBlocked")
+               }
+           }
+           catch let error{
+               print("error: ", error)
+           }
+       }
+       
+       
+       
+       func getCommentFromThread(query : String) -> [Comment]?{
+           guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+               return []
+             }
+           let context = appDelegate.persistentContainer.viewContext
+           let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Thread")
+           
+           fetchReq.predicate = NSPredicate(format: "name == %@", query)
+           do{
+               let thread = try context.fetch(fetchReq)
+               for data in thread{
+                   let curr = data as! Thread
+                   return curr.comments as? [Comment]
+               }
+           }
+           catch let error{
+               print("error: ", error)
+               
+           }
+           return []
+       }
 }
