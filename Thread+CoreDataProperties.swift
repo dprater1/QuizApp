@@ -18,6 +18,10 @@ extension Thread {
 
     @NSManaged private var comments: [Comment]?
     @NSManaged public var name: String?
+    
+    func getComments() -> [Comment]?{
+        return comments
+    }
 
 }
 
