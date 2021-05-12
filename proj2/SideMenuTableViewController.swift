@@ -36,7 +36,7 @@ class SideMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = textData[indexPath.row]
-        //cell.textLabel?.font = UIFont.
+        cell.textLabel?.font = UIFont.init(name: "Avenir", size: 18)
         if(indexPath.row == 0){
             cell.textLabel?.textColor = UIColor.red
 

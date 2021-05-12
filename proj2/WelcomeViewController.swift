@@ -10,7 +10,7 @@ import SideMenu
 
 class WelcomeViewController: UIViewController {
     var menu : SideMenuNavigationController?
-    
+    @IBOutlet weak var nav: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
         menu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
@@ -18,7 +18,10 @@ class WelcomeViewController: UIViewController {
         menu?.setNavigationBarHidden(true, animated: false)
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
-                
+        nav.setBackgroundImage(UIImage(), for: .default)
+        nav.shadowImage = UIImage()
+        nav.isTranslucent = true
+        //menu?.settings.
         // Do any additional setup after loading the view.
     }
     

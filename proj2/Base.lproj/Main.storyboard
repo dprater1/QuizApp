@@ -226,7 +226,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0tS-Nc-N3C">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueishpinkgradient" translatesAutoresizingMaskIntoConstraints="NO" id="P2I-mH-OVE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0tS-Nc-N3C">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -245,10 +249,13 @@
                         <viewLayoutGuide key="safeArea" id="RvH-9N-rhh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="nav" destination="0tS-Nc-N3C" id="dch-x7-C6Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qs-NH-OW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1597" y="81"/>
+            <point key="canvasLocation" x="1595.6521739130435" y="80.357142857142847"/>
         </scene>
         <!--Side Menu Table View Controller-->
         <scene sceneID="u9Y-UI-JCO">
@@ -282,13 +289,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yGs-d9-bm6"/>
+        <segue reference="vih-Z0-P8j"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Celestial_Questions-3-removebg-preview" width="500" height="500"/>
         <image name="Celestial_Questions-4-removebg-preview" width="500" height="500"/>
         <image name="bluegradient" width="1080" height="1920"/>
         <image name="blueishgradient" width="684" height="1280"/>
+        <image name="blueishpinkgradient" width="1242" height="2208"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="logo-facebook" width="2100" height="790"/>
         <systemColor name="systemBackgroundColor">
