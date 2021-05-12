@@ -8,7 +8,8 @@
 import UIKit
 
 class SideMenuTableViewController: UITableViewController {
-
+    
+    var textData = ["Log Out","Subscribe","Current Rank","Profile"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self , forCellReuseIdentifier:"cell")        // Uncomment the following line to preserve selection between presentations
@@ -27,19 +28,23 @@ class SideMenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return textData.count
+        
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = textData[indexPath.row]
+        //cell.textLabel?.font = UIFont.
+        if(indexPath.row == 0){
+            cell.textLabel?.textColor = UIColor.red
 
-        // Configure the cell...
-
+        }
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        
     }
 
     /*
