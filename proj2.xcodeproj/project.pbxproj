@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4050109F264C1B33000DE388 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4050109E264C1B33000DE388 /* WelcomeViewController.swift */; };
+		405010A3264C1C4F000DE388 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */; };
 		4059776C2649A41D0093870E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059776B2649A41D0093870E /* AppDelegate.swift */; };
 		4059776E2649A41D0093870E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059776D2649A41D0093870E /* SceneDelegate.swift */; };
 		405977702649A41D0093870E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059776F2649A41D0093870E /* ViewController.swift */; };
@@ -30,8 +32,28 @@
 		B0701AD46F1310E96A4CE23F /* Pods_proj2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		405010AD264C2055000DE388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 405010A8264C2055000DE388 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8E3BC17959E86DAEBAB9D3FA1DD6BBDB;
+			remoteInfo = "Pods-proj2";
+		};
+		405010AF264C2055000DE388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 405010A8264C2055000DE388 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 319D06AA0D1D0BA345459C039040A1ED;
+			remoteInfo = SideMenu;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0F16A09D20729860560C772C /* Pods-proj2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proj2.debug.xcconfig"; path = "Target Support Files/Pods-proj2/Pods-proj2.debug.xcconfig"; sourceTree = "<group>"; };
+		4050109E264C1B33000DE388 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		405010A8264C2055000DE388 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		405977682649A41D0093870E /* proj2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proj2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4059776B2649A41D0093870E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4059776D2649A41D0093870E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,8 +98,16 @@
 				0F16A09D20729860560C772C /* Pods-proj2.debug.xcconfig */,
 				C24461B4F372AB82C467A7BD /* Pods-proj2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		405010A9264C2055000DE388 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				405010AE264C2055000DE388 /* Pods_proj2.framework */,
+				405010B0264C2055000DE388 /* SideMenu.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		4059775F2649A41D0093870E = {
@@ -122,6 +152,8 @@
 				8449E812264A3230005B4D68 /* DBHelper.swift */,
 				8449E815264A3474005B4D68 /* LoginViewController.swift */,
 				8449E81A264ADA8E005B4D68 /* comment.swift */,
+				4050109E264C1B33000DE388 /* WelcomeViewController.swift */,
+				405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
@@ -129,6 +161,7 @@
 		F9055A05482B5EB106A66B1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				405010A8264C2055000DE388 /* Pods.xcodeproj */,
 				9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */,
 			);
 			name = Frameworks;
@@ -181,12 +214,35 @@
 			mainGroup = 4059775F2649A41D0093870E;
 			productRefGroup = 405977692649A41D0093870E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 405010A9264C2055000DE388 /* Products */;
+					ProjectRef = 405010A8264C2055000DE388 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				405977672649A41D0093870E /* proj2 */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		405010AE264C2055000DE388 /* Pods_proj2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_proj2.framework;
+			remoteRef = 405010AD264C2055000DE388 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		405010B0264C2055000DE388 /* SideMenu.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SideMenu.framework;
+			remoteRef = 405010AF264C2055000DE388 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		405977662649A41D0093870E /* Resources */ = {
@@ -257,12 +313,14 @@
 				8449E7A62649AD20005B4D68 /* Quiz+CoreDataProperties.swift in Sources */,
 				8449E7A42649AD20005B4D68 /* User+CoreDataProperties.swift in Sources */,
 				4059776C2649A41D0093870E /* AppDelegate.swift in Sources */,
+				4050109F264C1B33000DE388 /* WelcomeViewController.swift in Sources */,
 				8449E810264A3146005B4D68 /* SignupViewController.swift in Sources */,
 				4059776E2649A41D0093870E /* SceneDelegate.swift in Sources */,
 				8449E7A22649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift in Sources */,
 				405977762649A41E0093870E /* proj2.xcdatamodeld in Sources */,
 				8449E81B264ADA8E005B4D68 /* comment.swift in Sources */,
 				8449E7A32649AD20005B4D68 /* User+CoreDataClass.swift in Sources */,
+				405010A3264C1C4F000DE388 /* SideMenuTableViewController.swift in Sources */,
 				8449E7A52649AD20005B4D68 /* Quiz+CoreDataClass.swift in Sources */,
 				8449E813264A3230005B4D68 /* DBHelper.swift in Sources */,
 			);
