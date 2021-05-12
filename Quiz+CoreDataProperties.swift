@@ -17,6 +17,7 @@ extension Quiz {
     }
 
     @NSManaged public var questions: NSObject?
+    @NSManaged public var name: String?
 
 }
 
