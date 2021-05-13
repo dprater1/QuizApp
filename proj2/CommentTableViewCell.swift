@@ -9,7 +9,7 @@ import UIKit
 class CommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var comment: UILabel!
-    @IBOutlet weak var use: UILabel!
+    @IBOutlet weak var user: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

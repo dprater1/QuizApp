@@ -31,17 +31,18 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ForumTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Forcell", for: indexPath) as! ForumTableViewCell
         
         cell.ForumTitle.text = topics[indexPath.row]
+        
         
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         ud.setValue(topics[indexPath.item], forKey: "currForum")
-        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let wel = sb.instantiateViewController(withIdentifier: "Thread") as! ThreadTableViewController
+        let sb : UIStoryboard = UIStoryboard(name: "Forum", bundle: nil)
+        let wel = sb.instantiateViewController(withIdentifier: "Thread") as! ThreadViewController
         present(wel, animated: true, completion: nil)
         
         

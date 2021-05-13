@@ -132,7 +132,7 @@ class DBHelper{
                let thread = try context.fetch(fetchReq)
                for data in thread{
                    let curr = data as! Thread
-                   return curr.comments as? [Comment]
+                   return curr.getComments()
                }
            }
            catch let error{
@@ -141,4 +141,20 @@ class DBHelper{
            }
            return []
        }
+}
+
+func addQuiz(title: String, questions : [String]) {
+    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+        return
+      }
+    let context = appDelegate.persistentContainer.viewContext
+    let quiz = NSEntityDescription.insertNewObject(forEntityName: "Quiz", into: context) as! Quiz
+    quiz.name = title
+    quiz.questions = questions
+    do{
+        try context.save()
+        print("data saved")
+    }catch{
+        print("data not saved")
+    }
 }

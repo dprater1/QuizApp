@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15810B2A264D7A8200A3489B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15810B29264D7A8200A3489B /* QuizViewController.swift */; };
+		15810B2C264D7AA000A3489B /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15810B2B264D7AA000A3489B /* CreateQuestionViewController.swift */; };
+		15810B2E264D7AB200A3489B /* AccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15810B2D264D7AB200A3489B /* AccessViewController.swift */; };
 		4050109F264C1B33000DE388 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4050109E264C1B33000DE388 /* WelcomeViewController.swift */; };
 		405010A3264C1C4F000DE388 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */; };
 		4059776C2649A41D0093870E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059776B2649A41D0093870E /* AppDelegate.swift */; };
@@ -36,7 +39,6 @@
 		84DE6883264C774300380FC3 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6882264C774300380FC3 /* CommentTableViewCell.swift */; };
 		84DE6886264C776D00380FC3 /* ForumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6885264C776D00380FC3 /* ForumTableViewCell.swift */; };
 		84DE6889264C779B00380FC3 /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6888264C779B00380FC3 /* ForumViewController.swift */; };
-		84DE688C264C77D000380FC3 /* ThreadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE688B264C77D000380FC3 /* ThreadTableViewController.swift */; };
 		B0701AD46F1310E96A4CE23F /* Pods_proj2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,9 @@
 
 /* Begin PBXFileReference section */
 		0F16A09D20729860560C772C /* Pods-proj2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proj2.debug.xcconfig"; path = "Target Support Files/Pods-proj2/Pods-proj2.debug.xcconfig"; sourceTree = "<group>"; };
+		15810B29264D7A8200A3489B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		15810B2B264D7AA000A3489B /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
+		15810B2D264D7AB200A3489B /* AccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessViewController.swift; sourceTree = "<group>"; };
 		4050109E264C1B33000DE388 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		405010A8264C2055000DE388 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -91,7 +96,6 @@
 		84DE6882264C774300380FC3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		84DE6885264C776D00380FC3 /* ForumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumTableViewCell.swift; sourceTree = "<group>"; };
 		84DE6888264C779B00380FC3 /* ForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
-		84DE688B264C77D000380FC3 /* ThreadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTableViewController.swift; sourceTree = "<group>"; };
 		9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proj2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24461B4F372AB82C467A7BD /* Pods-proj2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proj2.release.xcconfig"; path = "Target Support Files/Pods-proj2/Pods-proj2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +182,9 @@
 				84DE6888264C779B00380FC3 /* ForumViewController.swift */,
 				84DE688B264C77D000380FC3 /* ThreadTableViewController.swift */,
 				4059CC92264D6C0600301C4E /* Views.swift */,
+				15810B29264D7A8200A3489B /* QuizViewController.swift */,
+				15810B2B264D7AA000A3489B /* CreateQuestionViewController.swift */,
+				15810B2D264D7AB200A3489B /* AccessViewController.swift */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
@@ -337,8 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8449E816264A3474005B4D68 /* LoginViewController.swift in Sources */,
+				15810B2A264D7A8200A3489B /* QuizViewController.swift in Sources */,
 				8449E81F264ADD1C005B4D68 /* Thread+CoreDataClass.swift in Sources */,
 				8449E7A92649AD39005B4D68 /* question.swift in Sources */,
+				15810B2C264D7AA000A3489B /* CreateQuestionViewController.swift in Sources */,
 				8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */,
 				8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */,
 				405977702649A41D0093870E /* ViewController.swift in Sources */,
@@ -360,8 +369,8 @@
 				4059CCA6264D7C4500301C4E /* ImageTableViewCell.swift in Sources */,
 				84DE6889264C779B00380FC3 /* ForumViewController.swift in Sources */,
 				84DE6886264C776D00380FC3 /* ForumTableViewCell.swift in Sources */,
+				15810B2E264D7AB200A3489B /* AccessViewController.swift in Sources */,
 				8449E7A52649AD20005B4D68 /* Quiz+CoreDataClass.swift in Sources */,
-				84DE688C264C77D000380FC3 /* ThreadTableViewController.swift in Sources */,
 				8449E813264A3230005B4D68 /* DBHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
