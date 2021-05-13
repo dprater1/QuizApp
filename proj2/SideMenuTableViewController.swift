@@ -9,10 +9,11 @@ import UIKit
 
 class SideMenuTableViewController: UITableViewController {
     
-    var textData = ["Log Out","Subscribe","Current Rank","Profile"]
+    var textData = ["Username Here","Log Out","Subscribe","Current Rank"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self , forCellReuseIdentifier:"cell")        // Uncomment the following line to preserve selection between presentations
+        tableView.register(ImageTableViewCell.self, forCellReuseIdentifier:"ImageTableViewCell")
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -34,12 +35,19 @@ class SideMenuTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(indexPath.row == 0){
+            let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.identifier, for: indexPath) as! ImageTableViewCell
+            cell.configure(label: textData[indexPath.row])
+            return cell
+            
+
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = textData[indexPath.row]
         cell.textLabel?.font = UIFont.init(name: "Avenir", size: 18)
-        if(indexPath.row == 0){
+        if(indexPath.row == 1){
             cell.textLabel?.textColor = UIColor.red
-
         }
         return cell
     }
