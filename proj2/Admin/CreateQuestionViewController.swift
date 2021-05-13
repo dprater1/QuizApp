@@ -23,9 +23,14 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
     }
     //did select row at indexPath
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "questions") as QuestionAnswersViewController
+        viewController.passQuestion = questions[indexPath.row]
+        self.present(viewController, animated: true, completion: nil)
         print("you tapped me! ", indexPath)
     }
     
+    //delete questions
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             questions.remove(at: indexPath.row)
