@@ -16,6 +16,7 @@
 		405977762649A41E0093870E /* proj2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 405977742649A41D0093870E /* proj2.xcdatamodeld */; };
 		405977782649A41F0093870E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 405977772649A41F0093870E /* Assets.xcassets */; };
 		4059777B2649A41F0093870E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405977792649A41F0093870E /* LaunchScreen.storyboard */; };
+		4059CC93264D6C0600301C4E /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059CC92264D6C0600301C4E /* Views.swift */; };
 		8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79B2649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift */; };
 		8449E7A22649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79C2649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift */; };
 		8449E7A32649AD20005B4D68 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79D2649AD20005B4D68 /* User+CoreDataClass.swift */; };
@@ -69,6 +70,7 @@
 		405977772649A41F0093870E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4059777A2649A41F0093870E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4059777C2649A41F0093870E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4059CC92264D6C0600301C4E /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		8449E79B2649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizAnswer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8449E79C2649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizAnswer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8449E79D2649AD20005B4D68 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				84DE6885264C776D00380FC3 /* ForumTableViewCell.swift */,
 				84DE6888264C779B00380FC3 /* ForumViewController.swift */,
 				84DE688B264C77D000380FC3 /* ThreadTableViewController.swift */,
+				4059CC92264D6C0600301C4E /* Views.swift */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */,
 				8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */,
 				405977702649A41D0093870E /* ViewController.swift in Sources */,
+				4059CC93264D6C0600301C4E /* Views.swift in Sources */,
 				8449E7A62649AD20005B4D68 /* Quiz+CoreDataProperties.swift in Sources */,
 				8449E7A42649AD20005B4D68 /* User+CoreDataProperties.swift in Sources */,
 				4059776C2649A41D0093870E /* AppDelegate.swift in Sources */,
