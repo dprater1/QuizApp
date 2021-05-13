@@ -8,6 +8,3 @@
 import Foundation
 import UIKit
 
-class myButton : UIButton {
-    
-}
