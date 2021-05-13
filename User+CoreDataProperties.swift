@@ -28,6 +28,10 @@ extension User {
 
 // MARK: Generated accessors for user
 extension User {
+    
+    func getComments() -> [Comment]? {
+        return comments
+    }
 
     @objc(addUserObject:)
     @NSManaged public func addToUser(_ value: QuizAnswer)

@@ -132,7 +132,7 @@ class DBHelper{
                let thread = try context.fetch(fetchReq)
                for data in thread{
                    let curr = data as! Thread
-                   return curr.comments as? [Comment]
+                   return curr.getComments()
                }
            }
            catch let error{
