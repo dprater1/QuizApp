@@ -112,6 +112,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15810B36264D87E600A3489B /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				84DE687F264C770E00380FC3 /* AdminViewController.swift */,
+				15810B29264D7A8200A3489B /* QuizViewController.swift */,
+				15810B2B264D7AA000A3489B /* CreateQuestionViewController.swift */,
+				15810B2D264D7AB200A3489B /* AccessViewController.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		210F72186165F35CF0D442A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,17 +185,13 @@
 				8449E81A264ADA8E005B4D68 /* comment.swift */,
 				4050109E264C1B33000DE388 /* WelcomeViewController.swift */,
 				405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */,
+				15810B36264D87E600A3489B /* Admin */,
 				4059CCA4264D7C2600301C4E /* SideMenuCellViews */,
 				84DE687A264C76B800380FC3 /* ThreadViewController.swift */,
-				84DE687F264C770E00380FC3 /* AdminViewController.swift */,
 				84DE6882264C774300380FC3 /* CommentTableViewCell.swift */,
 				84DE6885264C776D00380FC3 /* ForumTableViewCell.swift */,
 				84DE6888264C779B00380FC3 /* ForumViewController.swift */,
-				84DE688B264C77D000380FC3 /* ThreadTableViewController.swift */,
 				4059CC92264D6C0600301C4E /* Views.swift */,
-				15810B29264D7A8200A3489B /* QuizViewController.swift */,
-				15810B2B264D7AA000A3489B /* CreateQuestionViewController.swift */,
-				15810B2D264D7AB200A3489B /* AccessViewController.swift */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
