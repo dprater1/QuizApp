@@ -14,6 +14,13 @@ class QuizViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is CreateQuestionViewController {
+            let vc = segue.destination as? CreateQuestionViewController
+            vc?.passTitle = quizTitle.text!
+        }
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "questions" {
             if quizTitle?.text == nil {

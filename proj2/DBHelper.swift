@@ -238,11 +238,10 @@ class DBHelper{
 
 
 
-func addQuiz(title: String, questions : Question) {
-    let questionArr : [Question] = []
+func addQuiz(title: String, question : [Question]) {
     let quiz = NSEntityDescription.insertNewObject(forEntityName: "Quiz", into: context!) as! Quiz
     quiz.name = title
-    quiz.questions = questionArr
+    quiz.questions = question
     do{
         try context!.save()
         print("data saved")

@@ -8,7 +8,7 @@
 import UIKit
 
 class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var passTitle : String = ""
     var questions : [String] = []
     static var questionObj : [Question] = []
     //number of rows in section
@@ -31,7 +31,7 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
         viewController.passQuestion = questions[indexPath.row]
         self.present(viewController, animated: true, completion: nil)
         print(CreateQuestionViewController.questionObj)
-        print("you tapped me! ", indexPath)
+        currentCell.imageView?.image = UIImage(systemName: "checkmark")
         currentCell.isUserInteractionEnabled = false
     }
     
@@ -43,10 +43,13 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
             for data in CreateQuestionViewController.questionObj {
                 if data.question.contains(currentCell.textLabel!.text!){
                     currentCell.isUserInteractionEnabled = true
+                    print(CreateQuestionViewController.questionObj)
+                    print("deleting object at index ... \(counter)")
                     CreateQuestionViewController.questionObj.remove(at: counter)
                 }
                 counter += 1
             }
+            currentCell.imageView?.image = UIImage(systemName: "questionmark")
             questions.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -56,6 +59,7 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
@@ -80,8 +84,55 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
         self.present(textAlertView, animated: true, completion: nil)
         
     }
+    func verifyCompleteQuestions() -> Bool {
+        var count = -1
+        for cell in self.tableView.visibleCells {
+            count += 1
+            if cell.imageView?.image == UIImage(systemName: "checkmark") {
+                print("check")
+            } else {
+                print("notcheck")
+                return false
+            }
+        }
+        if count == -1 {
+            print("none exist")
+            return false
+        } else {
+            print("all check")
+            return true
+        }
+    }
     @IBAction func deleteArray(_ sender: Any) {
         CreateQuestionViewController.questionObj.removeAll()
     }
+    
+    @IBAction func submitQuiz(_ sender: Any) {
+        if verifyCompleteQuestions() {
+            let Alert = UIAlertController(title: "Quiz Complete", message: "Are you sure you want to submit Quiz?", preferredStyle: .alert)
+            Alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                print("submitting quiz...")
+                DBHelper.inst.addQuiz(title: self.passTitle, question: CreateQuestionViewController.questionObj)
+                print("resetting quiz template...")
+                CreateQuestionViewController.questionObj.removeAll()
+                let Alert1 = UIAlertController(title: "Quiz Submitted", message: "Moving back to admin page!", preferredStyle: .alert)
+                Alert1.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "Admin") as! AdminViewController
+                    self.present(vc, animated: true, completion: nil)
+                    
+                    }))
+                self.present(Alert1, animated: true, completion: nil)
+                
+            }))
+            Alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            self.present(Alert, animated: true)
+            } else {
+            let Alert = UIAlertController(title: "Incomplete Quiz", message: "Please submit all and valid questions!", preferredStyle: .alert)
+            Alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(Alert, animated: true)
+        }
+        
+    }
+    
 }
 
