@@ -12,8 +12,7 @@ class RadioButton: UIButton {
     var alternateButton:Array<RadioButton>?
     
     override func awakeFromNib() {
-        self.layer.cornerRadius = 5
-        self.layer.borderWidth = 2.0
+        
         self.layer.masksToBounds = true
     }
     
@@ -41,10 +40,10 @@ class RadioButton: UIButton {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                let image = UIImage(named: "siloutte")
+                let image = UIImage(named: "selected")
                 self.setBackgroundImage(image, for: .normal)
             } else {
-                let image = UIImage(named: "mint")
+                let image = UIImage(named: "unselected")
                 self.setBackgroundImage(image, for: .normal)
             }
         }
