@@ -8,6 +8,8 @@ import UIKit
 
 class CommentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var innerComment: UILabel!
+    @IBOutlet weak var innerUser: UILabel!
     @IBOutlet weak var comment: UILabel!
     @IBOutlet weak var user: UILabel!
     override func awakeFromNib() {

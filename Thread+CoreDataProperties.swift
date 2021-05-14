@@ -2,7 +2,7 @@
 //  Thread+CoreDataProperties.swift
 //  proj2
 //
-//  Created by admin on 5/11/21.
+//  Created by admin on 5/13/21.
 //
 //
 
@@ -16,12 +16,13 @@ extension Thread {
         return NSFetchRequest<Thread>(entityName: "Thread")
     }
 
-    @NSManaged private var comments: [Comment]?
+    @NSManaged public var comments: Comments?
     @NSManaged public var name: String?
     
-    func getComments() -> [Comment]?{
-        return comments
+    func addComment(comment : Comment){
+        comments?.comments.append(comment)
     }
+    
 
 }
 

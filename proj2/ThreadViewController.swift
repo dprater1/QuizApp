@@ -28,23 +28,39 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
+        comment = DBHelper.inst.getCommentFromThread(query: ud.string(forKey: "currForum") ?? "General")
+        print(comment?.count)
         return comment?.count ?? 0
     }
 
   
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.rowHeight = 110
         let myCell = tableView.dequeueReusableCell(withIdentifier: "threadCell", for: indexPath) as! CommentTableViewCell
-        
-        myCell.user.text = comment![indexPath.row].author.username
+        //print(comment![indexPath.row].author)
+        myCell.user.text = comment![indexPath.row].author
         myCell.comment.text = comment![indexPath.row].text
+        //print(comment!.count)
+        
         
 
         
         return myCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        ud.setValue(indexPath.row, forKey: "comment")
+        let sb : UIStoryboard = UIStoryboard(name: "Forum", bundle: nil)
+        let wel = sb.instantiateViewController(withIdentifier: "SingleComment") as! SingleCommentViewController
+        present(wel, animated: true, completion: nil)
+        
+        
+        
+    }
+
     
 
 

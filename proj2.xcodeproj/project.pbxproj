@@ -34,7 +34,12 @@
 		84DE6883264C774300380FC3 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6882264C774300380FC3 /* CommentTableViewCell.swift */; };
 		84DE6886264C776D00380FC3 /* ForumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6885264C776D00380FC3 /* ForumTableViewCell.swift */; };
 		84DE6889264C779B00380FC3 /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6888264C779B00380FC3 /* ForumViewController.swift */; };
-		84DE688C264C77D000380FC3 /* ThreadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE688B264C77D000380FC3 /* ThreadTableViewController.swift */; };
+		84DE688F264D6C6C00380FC3 /* Forum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DE688E264D6C6C00380FC3 /* Forum.storyboard */; };
+		84DE6894264D76A700380FC3 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6893264D76A700380FC3 /* AddCommentViewController.swift */; };
+		84DE6897264D8E9300380FC3 /* CommentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6896264D8E9300380FC3 /* CommentContainer.swift */; };
+		84DE689A264D91A000380FC3 /* comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6899264D91A000380FC3 /* comments.swift */; };
+		84F071BA264EBCA1002B9555 /* SingleCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071B9264EBCA1002B9555 /* SingleCommentViewController.swift */; };
+		84F071BD264EC5FB002B9555 /* AddReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071BC264EC5FB002B9555 /* AddReplyViewController.swift */; };
 		B0701AD46F1310E96A4CE23F /* Pods_proj2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +92,12 @@
 		84DE6882264C774300380FC3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		84DE6885264C776D00380FC3 /* ForumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumTableViewCell.swift; sourceTree = "<group>"; };
 		84DE6888264C779B00380FC3 /* ForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
-		84DE688B264C77D000380FC3 /* ThreadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTableViewController.swift; sourceTree = "<group>"; };
+		84DE688E264D6C6C00380FC3 /* Forum.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Forum.storyboard; sourceTree = "<group>"; };
+		84DE6893264D76A700380FC3 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
+		84DE6896264D8E9300380FC3 /* CommentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentContainer.swift; sourceTree = "<group>"; };
+		84DE6899264D91A000380FC3 /* comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comments.swift; sourceTree = "<group>"; };
+		84F071B9264EBCA1002B9555 /* SingleCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCommentViewController.swift; sourceTree = "<group>"; };
+		84F071BC264EC5FB002B9555 /* AddReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReplyViewController.swift; sourceTree = "<group>"; };
 		9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proj2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24461B4F372AB82C467A7BD /* Pods-proj2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proj2.release.xcconfig"; path = "Target Support Files/Pods-proj2/Pods-proj2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +181,12 @@
 				84DE6882264C774300380FC3 /* CommentTableViewCell.swift */,
 				84DE6885264C776D00380FC3 /* ForumTableViewCell.swift */,
 				84DE6888264C779B00380FC3 /* ForumViewController.swift */,
-				84DE688B264C77D000380FC3 /* ThreadTableViewController.swift */,
+				84DE688E264D6C6C00380FC3 /* Forum.storyboard */,
+				84DE6893264D76A700380FC3 /* AddCommentViewController.swift */,
+				84DE6896264D8E9300380FC3 /* CommentContainer.swift */,
+				84DE6899264D91A000380FC3 /* comments.swift */,
+				84F071B9264EBCA1002B9555 /* SingleCommentViewController.swift */,
+				84F071BC264EC5FB002B9555 /* AddReplyViewController.swift */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
@@ -267,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DE688F264D6C6C00380FC3 /* Forum.storyboard in Resources */,
 				4059777B2649A41F0093870E /* LaunchScreen.storyboard in Resources */,
 				405977782649A41F0093870E /* Assets.xcassets in Resources */,
 				405977732649A41D0093870E /* Main.storyboard in Resources */,
@@ -331,6 +347,7 @@
 				8449E7A62649AD20005B4D68 /* Quiz+CoreDataProperties.swift in Sources */,
 				8449E7A42649AD20005B4D68 /* User+CoreDataProperties.swift in Sources */,
 				4059776C2649A41D0093870E /* AppDelegate.swift in Sources */,
+				84DE6897264D8E9300380FC3 /* CommentContainer.swift in Sources */,
 				4050109F264C1B33000DE388 /* WelcomeViewController.swift in Sources */,
 				8449E810264A3146005B4D68 /* SignupViewController.swift in Sources */,
 				84DE6883264C774300380FC3 /* CommentTableViewCell.swift in Sources */,
@@ -340,12 +357,15 @@
 				405977762649A41E0093870E /* proj2.xcdatamodeld in Sources */,
 				8449E81B264ADA8E005B4D68 /* comment.swift in Sources */,
 				8449E7A32649AD20005B4D68 /* User+CoreDataClass.swift in Sources */,
+				84DE689A264D91A000380FC3 /* comments.swift in Sources */,
+				84F071BD264EC5FB002B9555 /* AddReplyViewController.swift in Sources */,
+				84DE6894264D76A700380FC3 /* AddCommentViewController.swift in Sources */,
 				405010A3264C1C4F000DE388 /* SideMenuTableViewController.swift in Sources */,
 				84DE6880264C770E00380FC3 /* AdminViewController.swift in Sources */,
 				84DE6889264C779B00380FC3 /* ForumViewController.swift in Sources */,
+				84F071BA264EBCA1002B9555 /* SingleCommentViewController.swift in Sources */,
 				84DE6886264C776D00380FC3 /* ForumTableViewCell.swift in Sources */,
 				8449E7A52649AD20005B4D68 /* Quiz+CoreDataClass.swift in Sources */,
-				84DE688C264C77D000380FC3 /* ThreadTableViewController.swift in Sources */,
 				8449E813264A3230005B4D68 /* DBHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
