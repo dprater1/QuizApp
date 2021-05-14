@@ -8,3 +8,25 @@
 import Foundation
 import UIKit
 
+class roundButton : UIButton{
+    
+    required init?(coder: NSCoder){
+        super.init(coder:coder)
+        layer.cornerRadius = 10
+        clipsToBounds = true    }
+}
+
+extension UIButton {
+    func btnCorner() {
+        layer.cornerRadius = 10
+        clipsToBounds = true
+    }
+}
+
+class commentsView : UITextView{
+    required init?(coder: NSCoder){
+        super.init(coder:coder)
+        layer.cornerRadius = 10
+        clipsToBounds = true
+    }
+}
