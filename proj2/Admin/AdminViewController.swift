@@ -8,19 +8,10 @@ import UIKit
 
 class AdminViewController: UIViewController {
 
-    @IBOutlet weak var username: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func Access(_ sender: Any) {
-        if DBHelper.inst.userExist(query: username.text!) {
-            DBHelper.inst.changeAccess(query: username.text!)
-        } else if username.text == nil {
-            print("please enter a username")
-        }
     }
     
     /*

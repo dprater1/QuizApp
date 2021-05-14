@@ -8,11 +8,18 @@
 import UIKit
 
 class SideMenuTableViewController: UITableViewController {
-    
-    var textData = ["Log Out","Subscribe","Current Rank","Profile"]
+    var bcColor = UIView()
+    var textData = ["","Username Here","Log Out","Subscribe","Current Rank"]
+    var imgData = ["","","pip.exit","dollarsign.square","star"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self , forCellReuseIdentifier:"cell")        // Uncomment the following line to preserve selection between presentations
+        tableView.register(UITableViewCell.self , forCellReuseIdentifier:"cell")
+                // Uncomment the following line to preserve selection between presentations
+        tableView.backgroundView = UIImageView(image: UIImage(named: "blueishpinkgradient"))
+        tableView.separatorStyle = .none
+        tableView.register(ImageTableViewCell.self, forCellReuseIdentifier:"ImageTableViewCell")
+        tableView.register(LogoTableViewCell.self,forCellReuseIdentifier: "LogoTableViewCell")
+        tableView.register(IconTableViewCell.self,forCellReuseIdentifier: "IconTableViewCell")
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -31,23 +38,66 @@ class SideMenuTableViewController: UITableViewController {
         return textData.count
         
     }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = textData[indexPath.row]
-        cell.textLabel?.font = UIFont.init(name: "Avenir", size: 18)
-        if(indexPath.row == 0){
-            cell.textLabel?.textColor = UIColor.red
-
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let headerView = UIView()
+            headerView.backgroundColor = UIColor.clear
+            return headerView
         }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath.row == 0) {
+            return 150
+        }else if(indexPath.row == 1){
+            return 200
+        }
+        else{
+            return 70
+        }
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(indexPath.row == 0){
+            let cell = tableView.dequeueReusableCell(withIdentifier: LogoTableViewCell.identifier, for: indexPath) as! LogoTableViewCell
+            cell.configure()
+            cell.backgroundColor = .clear
+            bcColor.backgroundColor = .clear
+            cell.selectedBackgroundView = bcColor
+            return cell
+            
+        }
+        if(indexPath.row == 1){
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.identifier, for: indexPath) as! ImageTableViewCell
+            cell.configure(label: textData[indexPath.row])
+            cell.backgroundColor = .clear
+            bcColor.backgroundColor = .clear
+            cell.selectedBackgroundView = bcColor
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: IconTableViewCell.identifier, for: indexPath) as! IconTableViewCell
+        cell.configure(imageNamed: imgData[indexPath.row], label: textData[indexPath.row], color: .black)
+        cell.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.8, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        if(indexPath.row == 2){
+            cell.configure(imageNamed: imgData[indexPath.row], label: textData[indexPath.row], color: .red)
+            
+        }
+        cell.backgroundColor = .clear
+        bcColor.backgroundColor = UIColor(red: 176/255.0, green: 204/255.0, blue: 220/255.0, alpha: 1)
+        cell.selectedBackgroundView = bcColor
         return cell
+    }
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.layer.masksToBounds = true
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-
-    /*
+    
+       /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.

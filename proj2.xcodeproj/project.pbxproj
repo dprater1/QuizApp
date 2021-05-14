@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15810B2A264D7A8200A3489B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15810B29264D7A8200A3489B /* QuizViewController.swift */; };
+		15810B2C264D7AA000A3489B /* CreateQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15810B2B264D7AA000A3489B /* CreateQuestionViewController.swift */; };
+		15810B2E264D7AB200A3489B /* AccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15810B2D264D7AB200A3489B /* AccessViewController.swift */; };
 		4050109F264C1B33000DE388 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4050109E264C1B33000DE388 /* WelcomeViewController.swift */; };
 		405010A3264C1C4F000DE388 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */; };
 		4059776C2649A41D0093870E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059776B2649A41D0093870E /* AppDelegate.swift */; };
@@ -16,6 +19,10 @@
 		405977762649A41E0093870E /* proj2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 405977742649A41D0093870E /* proj2.xcdatamodeld */; };
 		405977782649A41F0093870E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 405977772649A41F0093870E /* Assets.xcassets */; };
 		4059777B2649A41F0093870E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405977792649A41F0093870E /* LaunchScreen.storyboard */; };
+		4059CC93264D6C0600301C4E /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059CC92264D6C0600301C4E /* Views.swift */; };
+		4059CCA6264D7C4500301C4E /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059CCA5264D7C4500301C4E /* ImageTableViewCell.swift */; };
+		4059CCC2264DC3EE00301C4E /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059CCC1264DC3EE00301C4E /* IconTableViewCell.swift */; };
+		4059CCC7264DD1C600301C4E /* LogoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059CCC6264DD1C600301C4E /* LogoTableViewCell.swift */; };
 		8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79B2649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift */; };
 		8449E7A22649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79C2649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift */; };
 		8449E7A32649AD20005B4D68 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79D2649AD20005B4D68 /* User+CoreDataClass.swift */; };
@@ -62,6 +69,9 @@
 
 /* Begin PBXFileReference section */
 		0F16A09D20729860560C772C /* Pods-proj2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proj2.debug.xcconfig"; path = "Target Support Files/Pods-proj2/Pods-proj2.debug.xcconfig"; sourceTree = "<group>"; };
+		15810B29264D7A8200A3489B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		15810B2B264D7AA000A3489B /* CreateQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuestionViewController.swift; sourceTree = "<group>"; };
+		15810B2D264D7AB200A3489B /* AccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessViewController.swift; sourceTree = "<group>"; };
 		4050109E264C1B33000DE388 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		405010A8264C2055000DE388 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -74,6 +84,10 @@
 		405977772649A41F0093870E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4059777A2649A41F0093870E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4059777C2649A41F0093870E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4059CC92264D6C0600301C4E /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		4059CCA5264D7C4500301C4E /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		4059CCC1264DC3EE00301C4E /* IconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
+		4059CCC6264DD1C600301C4E /* LogoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTableViewCell.swift; sourceTree = "<group>"; };
 		8449E79B2649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizAnswer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8449E79C2649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizAnswer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8449E79D2649AD20005B4D68 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -114,6 +128,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15810B36264D87E600A3489B /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				84DE687F264C770E00380FC3 /* AdminViewController.swift */,
+				15810B29264D7A8200A3489B /* QuizViewController.swift */,
+				15810B2B264D7AA000A3489B /* CreateQuestionViewController.swift */,
+				15810B2D264D7AB200A3489B /* AccessViewController.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		210F72186165F35CF0D442A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +201,9 @@
 				8449E81A264ADA8E005B4D68 /* comment.swift */,
 				4050109E264C1B33000DE388 /* WelcomeViewController.swift */,
 				405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */,
+				15810B36264D87E600A3489B /* Admin */,
+				4059CCA4264D7C2600301C4E /* SideMenuCellViews */,
 				84DE687A264C76B800380FC3 /* ThreadViewController.swift */,
-				84DE687F264C770E00380FC3 /* AdminViewController.swift */,
 				84DE6882264C774300380FC3 /* CommentTableViewCell.swift */,
 				84DE6885264C776D00380FC3 /* ForumTableViewCell.swift */,
 				84DE6888264C779B00380FC3 /* ForumViewController.swift */,
@@ -187,8 +213,19 @@
 				84DE6899264D91A000380FC3 /* comments.swift */,
 				84F071B9264EBCA1002B9555 /* SingleCommentViewController.swift */,
 				84F071BC264EC5FB002B9555 /* AddReplyViewController.swift */,
+				4059CC92264D6C0600301C4E /* Views.swift */,
 			);
 			path = proj2;
+			sourceTree = "<group>";
+		};
+		4059CCA4264D7C2600301C4E /* SideMenuCellViews */ = {
+			isa = PBXGroup;
+			children = (
+				4059CCA5264D7C4500301C4E /* ImageTableViewCell.swift */,
+				4059CCC1264DC3EE00301C4E /* IconTableViewCell.swift */,
+				4059CCC6264DD1C600301C4E /* LogoTableViewCell.swift */,
+			);
+			path = SideMenuCellViews;
 			sourceTree = "<group>";
 		};
 		F9055A05482B5EB106A66B1F /* Frameworks */ = {
@@ -339,11 +376,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8449E816264A3474005B4D68 /* LoginViewController.swift in Sources */,
+				15810B2A264D7A8200A3489B /* QuizViewController.swift in Sources */,
 				8449E81F264ADD1C005B4D68 /* Thread+CoreDataClass.swift in Sources */,
 				8449E7A92649AD39005B4D68 /* question.swift in Sources */,
+				15810B2C264D7AA000A3489B /* CreateQuestionViewController.swift in Sources */,
 				8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */,
 				8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */,
 				405977702649A41D0093870E /* ViewController.swift in Sources */,
+				4059CC93264D6C0600301C4E /* Views.swift in Sources */,
 				8449E7A62649AD20005B4D68 /* Quiz+CoreDataProperties.swift in Sources */,
 				8449E7A42649AD20005B4D68 /* User+CoreDataProperties.swift in Sources */,
 				4059776C2649A41D0093870E /* AppDelegate.swift in Sources */,
@@ -356,15 +396,19 @@
 				8449E7A22649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift in Sources */,
 				405977762649A41E0093870E /* proj2.xcdatamodeld in Sources */,
 				8449E81B264ADA8E005B4D68 /* comment.swift in Sources */,
+				4059CCC2264DC3EE00301C4E /* IconTableViewCell.swift in Sources */,
 				8449E7A32649AD20005B4D68 /* User+CoreDataClass.swift in Sources */,
 				84DE689A264D91A000380FC3 /* comments.swift in Sources */,
 				84F071BD264EC5FB002B9555 /* AddReplyViewController.swift in Sources */,
 				84DE6894264D76A700380FC3 /* AddCommentViewController.swift in Sources */,
 				405010A3264C1C4F000DE388 /* SideMenuTableViewController.swift in Sources */,
 				84DE6880264C770E00380FC3 /* AdminViewController.swift in Sources */,
+				4059CCA6264D7C4500301C4E /* ImageTableViewCell.swift in Sources */,
 				84DE6889264C779B00380FC3 /* ForumViewController.swift in Sources */,
 				84F071BA264EBCA1002B9555 /* SingleCommentViewController.swift in Sources */,
 				84DE6886264C776D00380FC3 /* ForumTableViewCell.swift in Sources */,
+				15810B2E264D7AB200A3489B /* AccessViewController.swift in Sources */,
+				4059CCC7264DD1C600301C4E /* LogoTableViewCell.swift in Sources */,
 				8449E7A52649AD20005B4D68 /* Quiz+CoreDataClass.swift in Sources */,
 				8449E813264A3230005B4D68 /* DBHelper.swift in Sources */,
 			);
