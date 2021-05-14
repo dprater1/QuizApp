@@ -195,6 +195,8 @@
 			children = (
 				84F071E6264F073C002B9555 /* quiz */,
 				84F071CF264EDD39002B9555 /* Forum */,
+				15810B36264D87E600A3489B /* Admin */,
+				4059CCA4264D7C2600301C4E /* SideMenuCellViews */,
 				4059776B2649A41D0093870E /* AppDelegate.swift */,
 				4059776D2649A41D0093870E /* SceneDelegate.swift */,
 				4059776F2649A41D0093870E /* ViewController.swift */,
@@ -209,8 +211,6 @@
 				8449E81A264ADA8E005B4D68 /* comment.swift */,
 				4050109E264C1B33000DE388 /* WelcomeViewController.swift */,
 				405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */,
-				15810B36264D87E600A3489B /* Admin */,
-				4059CCA4264D7C2600301C4E /* SideMenuCellViews */,
 				4059CC92264D6C0600301C4E /* Views.swift */,
 			);
 			path = proj2;
