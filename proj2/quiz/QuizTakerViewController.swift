@@ -8,14 +8,17 @@
 import UIKit
 
 class QuizTakerViewController: UIViewController {
-
+    let ud = UserDefaults.standard
+    
+    @IBOutlet weak var quizName: UILabel!
     @IBOutlet weak var answer1: UILabel!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var answer2: UILabel!
     @IBOutlet weak var answer3: UILabel!
     @IBOutlet weak var answer4: UILabel!
-    
-    
+    var currQuiz : String?
+    var currQuest : Int?
+    var quest : Question?
     
     @IBOutlet weak var Abutt: RadioButton!
     
@@ -26,6 +29,9 @@ class QuizTakerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var currQuest = ud.integer(forKey: "currQuest") ?? 0
+        currQuiz = ud.string(forKey: "currQuiz") ?? "unknownQuiz"
+        loadquiz()
         Abutt.isSelected = false
         BButt.isSelected = false
         CButt.isSelected = false
@@ -38,15 +44,28 @@ class QuizTakerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func loadquiz(){
+        
+        let quiz = DBHelper.inst.getQuiz(query: currQuiz!)
+        if(quiz != nil){
+            quest = quiz!.questions![currQuest!]
+            quizName.text = quiz!.name
+            question.text = "question " + String(currQuest! + 1) + quest!.question
+            answer1.text = quest!.a
+            answer2.text = quest!.b
+            answer3.text = quest!.c
+            answer4.text = quest!.d
+        }
+        else{
+            print("quiz does not exist")
+        }
     }
-    */
 
+   
+    @IBAction func submitQuestion(_ sender: Any) {
+        
+        ud.setValue(currQuest! + 1, forKey: "currQuest")
+    }
+    
 }

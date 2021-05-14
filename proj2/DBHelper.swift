@@ -247,6 +247,26 @@ func addQuiz(title: String, questions : Question) {
         print("data not saved")
     }
 }
+    func getQuiz(query : String) -> Quiz?{
+        var quiz : Quiz?
+        let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Thread")
+        
+        fetchReq.predicate = NSPredicate(format: "name == %@", query)
+        do{
+         let thread = try context!.fetch(fetchReq)
+            for data in thread{
+                let quiz = data as! Quiz
+                return quiz
+            }
+        }
+        catch let error{
+            print("error: ", error)
+            
+            
+        }
+        return quiz
+    }
+    
 }
 public class Question : NSObject {
     var question : String = ""
