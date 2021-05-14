@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var uName: UITextField!
     @IBOutlet weak var uPass: UITextField!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var remSwitch: UISwitch!
     override func viewDidLoad() {
         if ud.bool(forKey: "rem"){
@@ -25,7 +27,7 @@ class LoginViewController: UIViewController {
             remSwitch.isOn = true
         }
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
