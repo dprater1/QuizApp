@@ -27,17 +27,26 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: "questions") as QuestionAnswersViewController
+        let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
         viewController.passQuestion = questions[indexPath.row]
         self.present(viewController, animated: true, completion: nil)
         print(CreateQuestionViewController.questionObj)
         print("you tapped me! ", indexPath)
+        currentCell.isUserInteractionEnabled = false
     }
     
     //delete questions
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
-            
+            var counter = 0
+            for data in CreateQuestionViewController.questionObj {
+                if data.question.contains(currentCell.textLabel!.text!){
+                    currentCell.isUserInteractionEnabled = true
+                    CreateQuestionViewController.questionObj.remove(at: counter)
+                }
+                counter += 1
+            }
             questions.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -70,6 +79,9 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
         textAlertView.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(textAlertView, animated: true, completion: nil)
         
+    }
+    @IBAction func deleteArray(_ sender: Any) {
+        CreateQuestionViewController.questionObj.removeAll()
     }
 }
 
