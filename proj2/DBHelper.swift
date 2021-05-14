@@ -103,10 +103,7 @@ class DBHelper{
            catch let error{
                print("error: ", error)
            }
-       }
-       
-       
-       
+       }       
        func getCommentFromThread(query : String) -> [Comment]?{
            
            let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Thread")
