@@ -17,7 +17,7 @@ extension QuizAnswer {
     }
 
     @NSManaged public var answers: [String]?
-    @NSManaged private var questions: [Question]?
+    @NSManaged public var questions: [Question]?
     @NSManaged public var user: User?
 
 }

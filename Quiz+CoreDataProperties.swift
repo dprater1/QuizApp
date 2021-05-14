@@ -16,11 +16,10 @@ extension Quiz {
         return NSFetchRequest<Quiz>(entityName: "Quiz")
     }
 
-    @NSManaged public var questions: [String]?
+    @NSManaged public var questions : [Question]?
     @NSManaged public var name: String?
 
 }
-
 extension Quiz : Identifiable {
 
 }

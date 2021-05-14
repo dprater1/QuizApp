@@ -503,6 +503,9 @@
                                 <rect key="frame" x="183" y="499" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitAnswers:" destination="QBx-YV-5aD" eventType="touchUpInside" id="ynV-Wj-2t0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="21o-C6-w1q"/>
