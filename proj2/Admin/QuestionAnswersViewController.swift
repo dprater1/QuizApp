@@ -10,8 +10,6 @@ import UIKit
 class QuestionAnswersViewController: UIViewController {
     
     
-
-    
     var passQuestion = ""
     var answers : [String] = []
     @IBOutlet weak var question: UILabel!
@@ -29,7 +27,6 @@ class QuestionAnswersViewController: UIViewController {
 
     @IBAction func submitAnswers(_ sender: Any) {
         if correctAnswer.text!.count <= 2 {
-            
         }
         answers.append(correctAnswer.text!)
         answers.append(wrongAnswer1.text!)
@@ -43,6 +40,7 @@ class QuestionAnswersViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         
     }
+    
     /*
     // MARK: - Navigation
 

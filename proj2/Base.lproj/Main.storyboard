@@ -435,7 +435,7 @@
         <!--Question Answers View Controller-->
         <scene sceneID="JOP-w2-oha">
             <objects>
-                <viewController storyboardIdentifier="questions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QBx-YV-5aD" customClass="QuestionAnswersViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="questions" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QBx-YV-5aD" customClass="QuestionAnswersViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nkp-RE-CYd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -567,6 +567,9 @@
                                 <rect key="frame" x="166" y="771" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit Quiz"/>
+                                <connections>
+                                    <action selector="submitQuiz:" destination="bSm-fg-1hg" eventType="touchUpInside" id="du3-5H-oLG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrg-6j-Etx">
                                 <rect key="frame" x="20" y="44" width="49" height="38"/>
@@ -576,6 +579,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="deleteArray:" destination="bSm-fg-1hg" eventType="touchUpInside" id="2pF-oS-oQz"/>
                                     <segue destination="zbH-eC-9eZ" kind="modal" modalPresentationStyle="fullScreen" id="GBm-Wp-EU4"/>
                                 </connections>
                             </button>
@@ -594,7 +598,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GBm-Wp-EU4"/>
+        <segue reference="gaI-km-Qr0"/>
         <segue reference="3jo-cP-nP1"/>
         <segue reference="vih-Z0-P8j"/>
     </inferredMetricsTieBreakers>
