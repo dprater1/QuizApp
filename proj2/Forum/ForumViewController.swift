@@ -7,11 +7,12 @@
 import UIKit
 
 class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    var bcColor = UIView()
     let topics = ["iOS", "General", "Java"]
     let ud = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -32,10 +33,12 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Forcell", for: indexPath) as! ForumTableViewCell
-        
         cell.ForumTitle.text = topics[indexPath.row]
-        
-        
+        tableView.rowHeight = 102
+        cell.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.8, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        cell.backgroundColor = .clear
+        bcColor.backgroundColor = UIColor(red: 176/255.0, green: 204/255.0, blue: 220/255.0, alpha: 1)
+        cell.selectedBackgroundView = bcColor
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
