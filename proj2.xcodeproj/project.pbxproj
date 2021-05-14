@@ -47,6 +47,9 @@
 		84DE689A264D91A000380FC3 /* comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6899264D91A000380FC3 /* comments.swift */; };
 		84F071BA264EBCA1002B9555 /* SingleCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071B9264EBCA1002B9555 /* SingleCommentViewController.swift */; };
 		84F071BD264EC5FB002B9555 /* AddReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071BC264EC5FB002B9555 /* AddReplyViewController.swift */; };
+		84F071EA264F0752002B9555 /* quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F071E9264F0752002B9555 /* quiz.storyboard */; };
+		84F071ED264F0792002B9555 /* QuizTakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071EC264F0792002B9555 /* QuizTakerViewController.swift */; };
+		84F071F0264F08FC002B9555 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071EF264F08FC002B9555 /* RadioButton.swift */; };
 		B0701AD46F1310E96A4CE23F /* Pods_proj2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +115,9 @@
 		84DE6899264D91A000380FC3 /* comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comments.swift; sourceTree = "<group>"; };
 		84F071B9264EBCA1002B9555 /* SingleCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCommentViewController.swift; sourceTree = "<group>"; };
 		84F071BC264EC5FB002B9555 /* AddReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReplyViewController.swift; sourceTree = "<group>"; };
+		84F071E9264F0752002B9555 /* quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = quiz.storyboard; sourceTree = "<group>"; };
+		84F071EC264F0792002B9555 /* QuizTakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTakerViewController.swift; sourceTree = "<group>"; };
+		84F071EF264F08FC002B9555 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proj2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24461B4F372AB82C467A7BD /* Pods-proj2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proj2.release.xcconfig"; path = "Target Support Files/Pods-proj2/Pods-proj2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +193,7 @@
 		4059776A2649A41D0093870E /* proj2 */ = {
 			isa = PBXGroup;
 			children = (
+				84F071E6264F073C002B9555 /* quiz */,
 				84F071CF264EDD39002B9555 /* Forum */,
 				4059776B2649A41D0093870E /* AppDelegate.swift */,
 				4059776D2649A41D0093870E /* SceneDelegate.swift */,
@@ -234,6 +241,16 @@
 				84F071BC264EC5FB002B9555 /* AddReplyViewController.swift */,
 			);
 			path = Forum;
+			sourceTree = "<group>";
+		};
+		84F071E6264F073C002B9555 /* quiz */ = {
+			isa = PBXGroup;
+			children = (
+				84F071E9264F0752002B9555 /* quiz.storyboard */,
+				84F071EC264F0792002B9555 /* QuizTakerViewController.swift */,
+				84F071EF264F08FC002B9555 /* RadioButton.swift */,
+			);
+			path = quiz;
 			sourceTree = "<group>";
 		};
 		F9055A05482B5EB106A66B1F /* Frameworks */ = {
@@ -327,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F071EA264F0752002B9555 /* quiz.storyboard in Resources */,
 				84DE688F264D6C6C00380FC3 /* Forum.storyboard in Resources */,
 				4059777B2649A41F0093870E /* LaunchScreen.storyboard in Resources */,
 				405977782649A41F0093870E /* Assets.xcassets in Resources */,
@@ -388,12 +406,14 @@
 				8449E81F264ADD1C005B4D68 /* Thread+CoreDataClass.swift in Sources */,
 				15810B2C264D7AA000A3489B /* CreateQuestionViewController.swift in Sources */,
 				8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */,
+				84F071F0264F08FC002B9555 /* RadioButton.swift in Sources */,
 				8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */,
 				405977702649A41D0093870E /* ViewController.swift in Sources */,
 				4059CC93264D6C0600301C4E /* Views.swift in Sources */,
 				8449E7A62649AD20005B4D68 /* Quiz+CoreDataProperties.swift in Sources */,
 				15810B3C264DA46800A3489B /* QuestionAnswersViewController.swift in Sources */,
 				8449E7A42649AD20005B4D68 /* User+CoreDataProperties.swift in Sources */,
+				84F071ED264F0792002B9555 /* QuizTakerViewController.swift in Sources */,
 				4059776C2649A41D0093870E /* AppDelegate.swift in Sources */,
 				84DE6897264D8E9300380FC3 /* CommentContainer.swift in Sources */,
 				4050109F264C1B33000DE388 /* WelcomeViewController.swift in Sources */,
