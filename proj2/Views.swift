@@ -30,3 +30,13 @@ class commentsView : UITextView{
         clipsToBounds = true
     }
 }
+
+class sideMenuView : UIView{
+    
+    required init?(coder: NSCoder){
+        super.init(coder:coder)
+        var nav : UINavigationBar
+        var menu : UIBarButtonItem
+        
+    }
+}
