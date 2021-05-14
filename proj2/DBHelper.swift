@@ -235,26 +235,22 @@ class DBHelper{
 //
 //        }
 //    }
-}
+
 
 
 func addQuiz(title: String, questions : Question) {
     let questionArr : [Question] = []
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-        return
-      }
-    let context = appDelegate.persistentContainer.viewContext
-    let quiz = NSEntityDescription.insertNewObject(forEntityName: "Quiz", into: context) as! Quiz
+    let quiz = NSEntityDescription.insertNewObject(forEntityName: "Quiz", into: context!) as! Quiz
     quiz.name = title
     quiz.questions = questionArr
     do{
-        try context.save()
+        try context!.save()
         print("data saved")
     }catch{
         print("data not saved")
     }
 }
-
+}
 public class Question : NSObject {
     var question : String = ""
     var a : String = ""
