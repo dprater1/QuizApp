@@ -8,7 +8,9 @@
 import UIKit
 
 class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var questions : [String] = []
+    static var questionObj : [Question] = []
     //number of rows in section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
@@ -23,16 +25,23 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
     }
     //did select row at indexPath
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "questions") as QuestionAnswersViewController
+        viewController.passQuestion = questions[indexPath.row]
+        self.present(viewController, animated: true, completion: nil)
+        print(CreateQuestionViewController.questionObj)
         print("you tapped me! ", indexPath)
     }
     
+    //delete questions
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+            
             questions.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
