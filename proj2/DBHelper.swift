@@ -234,7 +234,24 @@ class DBHelper{
 //    }
 
 
-
+    func quizExists(title : String) -> Bool {
+        var fetchReq = NSFetchRequest<NSManagedObject>(entityName: "Quiz")
+        fetchReq.predicate = NSPredicate(format: "name == %@", title)
+        do{
+            let quiz = try context!.fetch(fetchReq)
+            let quizzes = quiz as! [Quiz]
+            for data in quizzes {
+                if(data.name == title){
+                    return true
+                } else {
+                    continue
+                }
+            }
+            return false
+        } catch {
+            return false
+        }
+    }
     
     func addQuiz(title: String, question : [Question]) {
       

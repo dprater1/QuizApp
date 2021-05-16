@@ -108,6 +108,11 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     @IBAction func submitQuiz(_ sender: Any) {
+        if questions.count < 10 {
+            let Alert = UIAlertController(title: "Not enough questions", message: "Please enter at least 10 questions", preferredStyle: .alert)
+            Alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(Alert, animated: true, completion: nil)
+        } else {
         if verifyCompleteQuestions() {
             let Alert = UIAlertController(title: "Quiz Complete", message: "Are you sure you want to submit Quiz?", preferredStyle: .alert)
             Alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
@@ -131,6 +136,7 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
             Alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             self.present(Alert, animated: true)
         }
+    }
         
     }
     

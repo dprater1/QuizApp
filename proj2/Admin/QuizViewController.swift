@@ -34,6 +34,12 @@ class QuizViewController: UIViewController {
                 Alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 present(Alert, animated: true, completion: nil)
                 return false
+            }
+            if DBHelper.inst.quizExists(title: quizTitle.text!){
+                let Alert = UIAlertController(title: "Quiz Exists", message: "Enter a title that doesn't already exist", preferredStyle: .alert)
+                Alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                present(Alert, animated: true, completion: nil)
+                return false 
             } else {
                 return true
             }
