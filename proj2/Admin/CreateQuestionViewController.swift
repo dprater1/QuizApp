@@ -112,7 +112,7 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
             let Alert = UIAlertController(title: "Quiz Complete", message: "Are you sure you want to submit Quiz?", preferredStyle: .alert)
             Alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
                 print("submitting quiz...")
-                DBHelper.inst.addQuiz(title: self.passTitle, question: CreateQuestionViewController.questionObj)
+                DBHelper.inst.addQuiz(title: self.passTitle, question : CreateQuestionViewController.questionObj)
                 print("resetting quiz template...")
                 CreateQuestionViewController.questionObj.removeAll()
                 let Alert1 = UIAlertController(title: "Quiz Submitted", message: "Moving back to admin page!", preferredStyle: .alert)

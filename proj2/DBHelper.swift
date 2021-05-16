@@ -236,11 +236,11 @@ class DBHelper{
 
 
     
-    func addQuiz(title: String, questions : Question) {
-        let questionArr : [Question] = []
+    func addQuiz(title: String, question : [Question]) {
+      
         let quiz = NSEntityDescription.insertNewObject(forEntityName: "Quiz", into: context!) as! Quiz
         quiz.name = title
-        quiz.questions = questionArr
+        quiz.questions = question
         do{
             try context!.save()
             print("data saved")
@@ -268,7 +268,7 @@ class DBHelper{
         return quiz
     }
     
-    func addQuizAnswer(user : String, name: String, questions : [Question], answer: [String]){
+    func addQuizAnswer(user : String, name: String, questions : [Question], answer: [String], right : Int){
         var currUser : User?
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
         fetchReq.predicate = NSPredicate(format: "username == %@", user)
@@ -287,6 +287,7 @@ class DBHelper{
         quizAns.questions = questions
         quizAns.answers = answer
         quizAns.user = currUser
+        quizAns.correct = Int16(right)
         
         do{
             try context!.save()

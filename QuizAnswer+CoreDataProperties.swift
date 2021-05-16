@@ -2,7 +2,7 @@
 //  QuizAnswer+CoreDataProperties.swift
 //  proj2
 //
-//  Created by admin on 5/14/21.
+//  Created by admin on 5/15/21.
 //
 //
 
@@ -20,6 +20,8 @@ extension QuizAnswer {
     @NSManaged public var questions: [Question]?
     @NSManaged public var quizname: String?
     @NSManaged public var user: User?
+    @NSManaged public var correct: Int16
+    
 
 }
 

@@ -29,7 +29,7 @@ class QuizTakerViewController: UIViewController {
     
     @IBOutlet weak var CButt: RadioButton!
     @IBOutlet weak var DButt: RadioButton!
-    
+    var correct = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         var currQuest = ud.integer(forKey: "currQuest") ?? 0
@@ -73,6 +73,7 @@ class QuizTakerViewController: UIViewController {
 
    
     @IBAction func submitQuestion(_ sender: Any) {
+        var thisAnswer = ""
         if(currQuest == 0){
             quizAttempt = []
             answered = []
@@ -80,22 +81,32 @@ class QuizTakerViewController: UIViewController {
       
         quizAttempt!.append(quest!)
         if(Abutt.isSelected){
+            thisAnswer = quest!.a
             answered!.append(quest!.a)
         }
-        if(BButt.isSelected){
+        else if(BButt.isSelected){
+            thisAnswer = quest!.b
             answered!.append(quest!.b)
         }
-        if(CButt.isSelected){
+        else if(CButt.isSelected){
+            thisAnswer = quest!.c
             answered!.append(quest!.c)
         }
-        if(DButt.isSelected){
+        else if(DButt.isSelected){
+            thisAnswer = quest!.d
             answered!.append(quest!.d)
         }
-            
+        else{
+            print("You must select an answer")
+            return
+        }
+        if(thisAnswer == quest!.correct){
+            correct += 1
+        }
         
         ud.setValue(currQuest! + 1, forKey: "currQuest")
         if(currQuest == 10){
-            DBHelper.inst.addQuizAnswer(user : ud.string(forKey: "currUser")!, name: quizName.text!, questions : quizAttempt!, answer: answered!)
+            DBHelper.inst.addQuizAnswer(user : ud.string(forKey: "currUser")!, name: quizName.text!, questions : quizAttempt!, answer: answered!, right: correct)
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
             present(wel, animated: true, completion: nil)

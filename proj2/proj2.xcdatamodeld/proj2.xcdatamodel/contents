@@ -6,6 +6,7 @@
     </entity>
     <entity name="QuizAnswer" representedClassName="QuizAnswer" syncable="YES">
         <attribute name="answers" optional="YES" attributeType="Transformable"/>
+        <attribute name="correct" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="questions" optional="YES" attributeType="Transformable"/>
         <attribute name="quizname" optional="YES" attributeType="String"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="user" inverseEntity="User"/>
@@ -25,7 +26,7 @@
     </entity>
     <elements>
         <element name="Quiz" positionX="-45" positionY="0" width="128" height="73"/>
-        <element name="QuizAnswer" positionX="-18" positionY="27" width="128" height="103"/>
+        <element name="QuizAnswer" positionX="-18" positionY="27" width="128" height="118"/>
         <element name="Thread" positionX="27" positionY="126" width="128" height="73"/>
         <element name="User" positionX="9" positionY="54" width="128" height="148"/>
     </elements>
