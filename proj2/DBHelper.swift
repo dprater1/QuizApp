@@ -235,18 +235,19 @@ class DBHelper{
 
 
 
-func addQuiz(title: String, questions : Question) {
-    let questionArr : [Question] = []
-    let quiz = NSEntityDescription.insertNewObject(forEntityName: "Quiz", into: context!) as! Quiz
-    quiz.name = title
-    quiz.questions = questionArr
-    do{
-        try context!.save()
-        print("data saved")
-    }catch{
-        print("data not saved")
+    
+    func addQuiz(title: String, questions : Question) {
+        let questionArr : [Question] = []
+        let quiz = NSEntityDescription.insertNewObject(forEntityName: "Quiz", into: context!) as! Quiz
+        quiz.name = title
+        quiz.questions = questionArr
+        do{
+            try context!.save()
+            print("data saved")
+        }catch{
+            print("data not saved")
+        }
     }
-}
     func getQuiz(query : String) -> Quiz?{
         var quiz : Quiz?
         let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Thread")
@@ -255,7 +256,7 @@ func addQuiz(title: String, questions : Question) {
         do{
          let thread = try context!.fetch(fetchReq)
             for data in thread{
-                let quiz = data as! Quiz
+                quiz = data as? Quiz
                 return quiz
             }
         }
@@ -266,6 +267,40 @@ func addQuiz(title: String, questions : Question) {
         }
         return quiz
     }
+    
+    func addQuizAnswer(user : String, name: String, questions : [Question], answer: [String]){
+        var currUser : User?
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
+        fetchReq.predicate = NSPredicate(format: "username == %@", user)
+        do{
+            let usr = try context!.fetch(fetchReq)
+            let users = usr as! [User]
+            for data in users{
+                if(data.username == user){
+                    currUser = data
+                }else {continue}}}
+                catch{
+                    print("Error getting the current user")
+                }
+        let quizAns = NSEntityDescription.insertNewObject(forEntityName: "QuizAnswer", into: context!) as! QuizAnswer
+        quizAns.quizname = name
+        quizAns.questions = questions
+        quizAns.answers = answer
+        quizAns.user = currUser
+        
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        } 
+        
+        
+        
+        
+    }
+    
     
 }
 public class Question : NSObject {

@@ -19,6 +19,9 @@ class QuizTakerViewController: UIViewController {
     var currQuiz : String?
     var currQuest : Int?
     var quest : Question?
+    var questOrder : [Int]?
+    var quizAttempt : [Question]?
+    var answered : [String]?
     
     @IBOutlet weak var Abutt: RadioButton!
     
@@ -47,8 +50,14 @@ class QuizTakerViewController: UIViewController {
     
     func loadquiz(){
         
+        
         let quiz = DBHelper.inst.getQuiz(query: currQuiz!)
         if(quiz != nil){
+            
+            if(currQuest == 0){
+                questOrder = Array(0...quiz!.questions!.count)
+                questOrder!.shuffle()
+            }
             quest = quiz!.questions![currQuest!]
             quizName.text = quiz!.name
             question.text = "question " + String(currQuest! + 1) + quest!.question
@@ -64,8 +73,35 @@ class QuizTakerViewController: UIViewController {
 
    
     @IBAction func submitQuestion(_ sender: Any) {
+        if(currQuest == 0){
+            quizAttempt = []
+            answered = []
+        }
+      
+        quizAttempt!.append(quest!)
+        if(Abutt.isSelected){
+            answered!.append(quest!.a)
+        }
+        if(BButt.isSelected){
+            answered!.append(quest!.b)
+        }
+        if(CButt.isSelected){
+            answered!.append(quest!.c)
+        }
+        if(DButt.isSelected){
+            answered!.append(quest!.d)
+        }
+            
         
         ud.setValue(currQuest! + 1, forKey: "currQuest")
+        if(currQuest == 10){
+            DBHelper.inst.addQuizAnswer(user : ud.string(forKey: "currUser")!, name: quizName.text!, questions : quizAttempt!, answer: answered!)
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
+            present(wel, animated: true, completion: nil)
+            return
+        }
+        
     }
     
 }

@@ -16,8 +16,8 @@ extension QuizAnswer {
         return NSFetchRequest<QuizAnswer>(entityName: "QuizAnswer")
     }
 
-    @NSManaged public var answers: NSObject?
-    @NSManaged public var questions: NSObject?
+    @NSManaged public var answers: [String]?
+    @NSManaged public var questions: [Question]?
     @NSManaged public var quizname: String?
     @NSManaged public var user: User?
 

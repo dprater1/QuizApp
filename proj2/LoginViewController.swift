@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
         //print(hashed)
     
         if(DBHelper.inst.validatePass(uName: uName.text!, uPass: String(describing: hashed))){
+            ud.setValue(uName.text, forKey: "currUser")
             if(remSwitch.isOn){
                 
                 ud.setValue(uName.text, forKey: "uName")
