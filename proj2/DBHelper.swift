@@ -57,7 +57,29 @@ class DBHelper{
             return false
         }
     }
-    
+    func fetchUser( query : String) -> User?{
+        var neededUser : User?
+        
+        var fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
+        fetchReq.predicate = NSPredicate(format: "username == %@", query)
+        do{
+            let usr = try context!.fetch(fetchReq)
+            let users = usr as! [User]
+            for data in users{
+                if(data.username == query){
+                    neededUser = data
+                    return neededUser
+                }
+                else {
+                    continue
+                }
+            }
+            return neededUser
+        }
+        catch{
+            return neededUser
+        }
+    }
     func validatePass(uName : String, uPass : String) -> Bool{
         
         //var user = UserD()
@@ -318,6 +340,31 @@ class DBHelper{
         
         
     }
+    func getQuizAnswer(user : String, quiz : String) -> QuizAnswer?{
+        var currUser = DBHelper.inst.fetchUser(query: user)
+        var quizAnswer : QuizAnswer?
+        DBHelper.dataCheck = false
+        let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "QuizAnswer")
+        
+        fetchReq.predicate = NSPredicate(format: "name == %@", user)
+        do{
+         let quized = try context!.fetch(fetchReq) as! [QuizAnswer]
+            for data in quized{
+                if (data.quizname == quiz){
+                    quizAnswer = data
+                    DBHelper.dataCheck = true
+                    return quizAnswer
+                }
+            }
+        }
+        catch let error{
+            print("error: ", error)            
+        }
+        return quizAnswer
+    }
+    
+    
+    
     
     
 }

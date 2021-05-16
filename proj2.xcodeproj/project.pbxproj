@@ -50,6 +50,8 @@
 		84F071EA264F0752002B9555 /* quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F071E9264F0752002B9555 /* quiz.storyboard */; };
 		84F071ED264F0792002B9555 /* QuizTakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071EC264F0792002B9555 /* QuizTakerViewController.swift */; };
 		84F071F0264F08FC002B9555 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071EF264F08FC002B9555 /* RadioButton.swift */; };
+		84F071FA2651B7E1002B9555 /* QuizEntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071F92651B7E1002B9555 /* QuizEntranceViewController.swift */; };
+		84F071FF2651BCCC002B9555 /* ReviewQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F071FE2651BCCC002B9555 /* ReviewQuizViewController.swift */; };
 		B0701AD46F1310E96A4CE23F /* Pods_proj2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 		84F071E9264F0752002B9555 /* quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = quiz.storyboard; sourceTree = "<group>"; };
 		84F071EC264F0792002B9555 /* QuizTakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTakerViewController.swift; sourceTree = "<group>"; };
 		84F071EF264F08FC002B9555 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		84F071F92651B7E1002B9555 /* QuizEntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEntranceViewController.swift; sourceTree = "<group>"; };
+		84F071FE2651BCCC002B9555 /* ReviewQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewQuizViewController.swift; sourceTree = "<group>"; };
 		9DDD5D3A679DDF62AFF5C5A3 /* Pods_proj2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proj2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24461B4F372AB82C467A7BD /* Pods-proj2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proj2.release.xcconfig"; path = "Target Support Files/Pods-proj2/Pods-proj2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,6 +253,8 @@
 				84F071E9264F0752002B9555 /* quiz.storyboard */,
 				84F071EC264F0792002B9555 /* QuizTakerViewController.swift */,
 				84F071EF264F08FC002B9555 /* RadioButton.swift */,
+				84F071F92651B7E1002B9555 /* QuizEntranceViewController.swift */,
+				84F071FE2651BCCC002B9555 /* ReviewQuizViewController.swift */,
 			);
 			path = quiz;
 			sourceTree = "<group>";
@@ -436,6 +442,8 @@
 				84F071BA264EBCA1002B9555 /* SingleCommentViewController.swift in Sources */,
 				84DE6886264C776D00380FC3 /* ForumTableViewCell.swift in Sources */,
 				15810B2E264D7AB200A3489B /* AccessViewController.swift in Sources */,
+				84F071FF2651BCCC002B9555 /* ReviewQuizViewController.swift in Sources */,
+				84F071FA2651B7E1002B9555 /* QuizEntranceViewController.swift in Sources */,
 				4059CCC7264DD1C600301C4E /* LogoTableViewCell.swift in Sources */,
 				8449E7A52649AD20005B4D68 /* Quiz+CoreDataClass.swift in Sources */,
 				8449E813264A3230005B4D68 /* DBHelper.swift in Sources */,
