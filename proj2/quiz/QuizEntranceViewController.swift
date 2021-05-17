@@ -30,6 +30,7 @@ class QuizEntranceViewController: UIViewController {
     }
     
     @IBAction func takeQuiz(_ sender: Any) {
+        ud.setValue(0, forKey: "currQuest")
         let sb : UIStoryboard = UIStoryboard(name: "quiz", bundle: nil)
         let wel = sb.instantiateViewController(withIdentifier: "TakeQuiz") as! QuizTakerViewController
         present(wel, animated: true, completion: nil)
