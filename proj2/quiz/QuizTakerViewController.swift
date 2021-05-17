@@ -34,6 +34,10 @@ class QuizTakerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currQuest = ud.integer(forKey: "currQuest") ?? 0
+        if(currQuest == 0){
+            quizAttempt = []
+            answered = []
+        }
         currQuiz = ud.string(forKey: "currQuiz") ?? "unknownQuiz"
         print(currQuiz)
         loadquiz()
@@ -80,7 +84,10 @@ class QuizTakerViewController: UIViewController {
             quiz = DBHelper.inst.getQuiz(query: currQuiz!)
         }
         if(quiz != nil){
-            
+            Abutt.isSelected = false
+            BButt.isSelected = false
+            CButt.isSelected = false
+            DButt.isSelected = false
             if(currQuest == 0){
                 questOrder = Array(0...quiz!.questions!.count)
                 questOrder!.shuffle()
@@ -88,7 +95,7 @@ class QuizTakerViewController: UIViewController {
             print(currQuest)
             quest = quiz!.questions![currQuest!]
             quizName.text = quiz!.name
-            question.text = "question " + String(currQuest! + 1) + quest!.question
+            question.text = "question " + String(currQuest! + 1) + ": " + quest!.question
             answer1.text = quest!.a
             answer2.text = quest!.b
             answer3.text = quest!.c
@@ -102,12 +109,8 @@ class QuizTakerViewController: UIViewController {
    
     @IBAction func submitQuestion(_ sender: Any) {
         var thisAnswer = ""
-        if(currQuest == 0){
-            quizAttempt = []
-            answered = []
-        }
+        
       
-        quizAttempt!.append(quest!)
         if(Abutt.isSelected){
             thisAnswer = quest!.a
             answered!.append(quest!.a)
@@ -128,15 +131,18 @@ class QuizTakerViewController: UIViewController {
             print("You must select an answer")
             return
         }
+        quizAttempt!.append(quest!)
+
         if(thisAnswer == quest!.correct){
             correct += 1
         }
+        currQuest! += 1
+        ud.setValue(currQuest, forKey: "currQuest")
         
-        ud.setValue(currQuest! + 1, forKey: "currQuest")
         if(currQuest == 10){
             DBHelper.inst.addQuizAnswer(user : ud.string(forKey: "currUser")!, name: quizName.text!, questions : quizAttempt!, answer: answered!, right: correct)
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
+            let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! WelcomeViewController
             present(wel, animated: true, completion: nil)
             return
         }

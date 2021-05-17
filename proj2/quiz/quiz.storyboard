@@ -131,6 +131,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This Question was not answered" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTg-ja-ZWG">
+                                <rect key="frame" x="24" y="490" width="344" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wnq-V9-xJS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -145,6 +152,7 @@
                         <outlet property="imageC" destination="EGv-YY-zZ2" id="kZZ-ED-KWS"/>
                         <outlet property="imageD" destination="WLS-SX-5KY" id="TTk-lN-3xP"/>
                         <outlet property="questionLabel" destination="0R8-r9-XHJ" id="3MJ-I6-kdJ"/>
+                        <outlet property="unansweredOutlet" destination="sTg-ja-ZWG" id="hrG-FP-qTm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZK-47-ACG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
