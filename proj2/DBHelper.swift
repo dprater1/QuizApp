@@ -385,11 +385,11 @@ class DBHelper{
         DBHelper.dataCheck = false
         let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "QuizAnswer")
         
-        fetchReq.predicate = NSPredicate(format: "name == %@", user)
+        fetchReq.predicate = NSPredicate(format: "quizname == %@", quiz)
         do{
          let quized = try context!.fetch(fetchReq) as! [QuizAnswer]
             for data in quized{
-                if (data.quizname == quiz){
+                if (data.user == currUser){
                     quizAnswer = data
                     DBHelper.dataCheck = true
                     return quizAnswer
