@@ -23,6 +23,17 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
         cell.textLabel?.text = questions[indexPath.row]
         return cell
     }
+    
+    func doesQuestionExist(question : String) -> Bool {
+        for data in questions {
+            if data == question {
+                return true
+            } else {
+                return false
+            }
+        }
+        return false
+    }
     //did select row at indexPath
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -76,8 +87,14 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
                 AlertView.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(AlertView, animated: true, completion: nil)
             } else {
-                self.questions.append(textAlertView.textFields![0].text!)
-                self.tableView.reloadData()
+                if self.doesQuestionExist(question: textAlertView.textFields![0].text!){
+                    let Alert = UIAlertController(title: "Question Exists", message: "Make sure you dont write the same question more than once", preferredStyle: .alert)
+                    Alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(Alert, animated: true, completion: nil)
+                } else {
+                    self.questions.append(textAlertView.textFields![0].text!)
+                    self.tableView.reloadData()
+                }
             }
         }))
         textAlertView.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

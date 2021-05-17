@@ -65,14 +65,14 @@ class LoginViewController: UIViewController {
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             if(uName.text! == "Admin"){
                 
-                let wel = sb.instantiateViewController(withIdentifier: "Admin") as! ViewController
+                let wel = sb.instantiateViewController(withIdentifier: "Admin") as! AdminViewController
                 present(wel, animated: true, completion: nil)
             }
             else{
                 print("username and password matched")
                 ud.setValue(uName.text, forKey: "currUser")
                 
-                let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
+                let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! WelcomeViewController
                 present(wel, animated: true, completion: nil)
             }
         }
