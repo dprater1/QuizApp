@@ -352,9 +352,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN1-dK-Y37">
-                                <rect key="frame" x="184" y="408" width="46" height="30"/>
+                                <rect key="frame" x="186" y="408" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Ranks"/>
                                 <connections>
                                     <segue destination="BRD-dk-Kuh" kind="modal" modalPresentationStyle="fullScreen" id="Ohw-Ss-XdV"/>
                                 </connections>
