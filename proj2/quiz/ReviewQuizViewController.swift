@@ -21,6 +21,7 @@ class ReviewQuizViewController: UIViewController {
     @IBOutlet weak var imageC: UIImageView!
     @IBOutlet weak var imageD: UIImageView!
     
+    @IBOutlet weak var unansweredOutlet: UILabel!
     var currQuiz : QuizAnswer?
     var currQuest : Question?
     var questNum = 0
@@ -43,6 +44,7 @@ class ReviewQuizViewController: UIViewController {
         imageB.isHidden = true
         imageC.isHidden = true
         imageD.isHidden = true
+        unansweredOutlet.isHidden = true
         
         switch currQuiz!.answers![questNum] {
         case currQuest!.a:
@@ -57,6 +59,8 @@ class ReviewQuizViewController: UIViewController {
         case currQuest!.d:
             imageD.isHidden = false
             imageD.image = UIImage(contentsOfFile: "wrong")
+        case " ":
+            unansweredOutlet.isHidden = false
             
         default:
             print("error")
