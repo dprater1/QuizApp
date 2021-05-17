@@ -218,8 +218,15 @@
                                     <action selector="submitQuestion:" destination="pov-ar-eeZ" eventType="touchUpInside" id="YSd-sI-VxM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euu-NF-eQj">
+                                <rect key="frame" x="241" y="60" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWp-OR-DTa">
-                                <rect key="frame" x="140" y="51" width="119" height="39"/>
+                                <rect key="frame" x="18" y="51" width="119" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -240,6 +247,7 @@
                         <outlet property="answer4" destination="UJb-oQ-1f3" id="vmj-Na-gXn"/>
                         <outlet property="question" destination="M6z-Vk-vYn" id="lsj-zn-D9v"/>
                         <outlet property="quizName" destination="EWp-OR-DTa" id="eve-uv-xF2"/>
+                        <outlet property="timer" destination="Euu-NF-eQj" id="Hed-6d-KSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0D-Bt-Zx4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
