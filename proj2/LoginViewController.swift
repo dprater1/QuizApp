@@ -72,7 +72,7 @@ class LoginViewController: UIViewController {
                 print("username and password matched")
                 ud.setValue(uName.text, forKey: "currUser")
                 
-                let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
+                let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! WelcomeViewController
                 present(wel, animated: true, completion: nil)
             }
         }

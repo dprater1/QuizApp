@@ -18,6 +18,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         //edit information in cell
+        cell.detailTextLabel?.text = String(indexPath.row + 1)
         cell.textLabel?.text = users[indexPath.row].username
         return cell
     }

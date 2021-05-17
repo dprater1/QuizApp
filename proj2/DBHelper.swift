@@ -88,7 +88,11 @@ class DBHelper{
             let usr = try context!.fetch(fetchReq)
             let users = usr as! [User]
             for data in users {
-                allUsers.append(data)
+                if data.username == "Admin" {
+                    print("skipping admin")
+                } else {
+                    allUsers.append(data)
+                }
             }
         } catch let error{
             print("error: ", error)
@@ -378,25 +382,18 @@ class DBHelper{
         }
         return quizAnswer
     }
-    
-    
-    
-    
-    
-}
-public class Question : NSObject {
-    var question : String = ""
-    var a : String = ""
-    var b : String = ""
-    var c : String = ""
-    var d : String = ""
-    var correct : String = ""
-    init(question : String, a : String, b : String, c : String, d : String, correct : String) {
-        self.question = question
-        self.a = a
-        self.b = b
-        self.c = c
-        self.d = d
-        self.correct = correct
+    func fetchAllQuiz() -> [Quiz] {
+        var allQuizzes : [Quiz] = []
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "Quiz")
+        do {
+            let quiz = try context!.fetch(fetchReq)
+            let quizzess = quiz as! [Quiz]
+            for data in quizzess {
+                allQuizzes.append(data)
+            }
+        } catch let error{
+            print("error: ", error)
+        }
+        return allQuizzes
     }
 }
