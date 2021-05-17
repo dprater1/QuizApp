@@ -9,8 +9,9 @@ import UIKit
 
 class SideMenuTableViewController: UITableViewController {
     var bcColor = UIView()
-    var textData = ["","Username Here","Log Out","Subscribe","Current Rank"]
-    var imgData = ["","","pip.exit","dollarsign.square","star"]
+    var ud = UserDefaults()
+    var textData = ["","Username Here","Log Out","Subscribe","Current Rank", ""]
+    var imgData = ["","","pip.exit","dollarsign.square","star", "clock"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self , forCellReuseIdentifier:"cell")
@@ -84,6 +85,16 @@ class SideMenuTableViewController: UITableViewController {
         cell.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.8, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
         if(indexPath.row == 2){
             cell.configure(imageNamed: imgData[indexPath.row], label: textData[indexPath.row], color: .red)
+            
+        }
+        if(indexPath.row == 5){
+            var user = DBHelper.init().fetchUser(query: ud.string(forKey: "currentUser") ?? "")
+            if(user?.subscribed ?? false){
+                textData[indexPath.row] = "30 days remaining"
+            }
+            else{
+                textData[indexPath.row] = "Not Subscribed"
+            }
             
         }
         cell.backgroundColor = .clear
