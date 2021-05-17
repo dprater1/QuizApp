@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pov-ar-eeZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pov-ar-eeZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,13 +12,13 @@
         <!--Quiz Entrance View Controller-->
         <scene sceneID="fNX-UE-MMg">
             <objects>
-                <viewController restorationIdentifier="QuizEntrance" id="wz1-Jz-4dP" customClass="QuizEntranceViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizEntrance" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wz1-Jz-4dP" customClass="QuizEntranceViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVh-hP-WeI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBy-cA-oc2">
-                                <rect key="frame" x="184" y="190" width="46" height="30"/>
+                                <rect key="frame" x="20" y="190" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO4-oW-PH6">
-                                <rect key="frame" x="184" y="373" width="46" height="30"/>
+                                <rect key="frame" x="20" y="373" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -44,12 +44,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1j-6r-6PG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="106"/>
+            <point key="canvasLocation" x="-868.11594202898561" y="105.80357142857143"/>
         </scene>
         <!--Review Quiz View Controller-->
         <scene sceneID="sx7-3t-NEf">
             <objects>
-                <viewController storyboardIdentifier="ReviewQuiz" id="8E2-qI-kab" customClass="ReviewQuizViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewQuiz" modalPresentationStyle="fullScreen" id="8E2-qI-kab" customClass="ReviewQuizViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nDa-hh-mai">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,7 +154,7 @@
         <!--Quiz Taker View Controller-->
         <scene sceneID="g5P-md-stI">
             <objects>
-                <viewController storyboardIdentifier="TakeQuiz" id="pov-ar-eeZ" customClass="QuizTakerViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TakeQuiz" modalPresentationStyle="fullScreen" id="pov-ar-eeZ" customClass="QuizTakerViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="071-8d-1Zh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,8 +218,15 @@
                                     <action selector="submitQuestion:" destination="pov-ar-eeZ" eventType="touchUpInside" id="YSd-sI-VxM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euu-NF-eQj">
+                                <rect key="frame" x="241" y="60" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWp-OR-DTa">
-                                <rect key="frame" x="140" y="51" width="119" height="39"/>
+                                <rect key="frame" x="18" y="51" width="119" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -240,6 +247,7 @@
                         <outlet property="answer4" destination="UJb-oQ-1f3" id="vmj-Na-gXn"/>
                         <outlet property="question" destination="M6z-Vk-vYn" id="lsj-zn-D9v"/>
                         <outlet property="quizName" destination="EWp-OR-DTa" id="eve-uv-xF2"/>
+                        <outlet property="timer" destination="Euu-NF-eQj" id="Hed-6d-KSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0D-Bt-Zx4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

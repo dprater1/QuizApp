@@ -9,9 +9,7 @@ import SideMenu
 
 class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var bcColor = UIView()
-    let topics = ["iOS", "General", "Java"]
-    var menu : SideMenuNavigationController?
-    @IBOutlet weak var nav: UINavigationBar!
+    let topics = ["General", "iOS", "Java", "Python"]
     let ud = UserDefaults.standard
     override func viewDidLoad() {
         menu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())

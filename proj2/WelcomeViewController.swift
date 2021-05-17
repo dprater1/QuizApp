@@ -8,10 +8,32 @@
 import UIKit
 import SideMenu
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let ud = UserDefaults.standard
+    let quizzes : [Quiz] = DBHelper.inst.fetchAllQuiz()
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return quizzes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = quizzes[indexPath.row].name
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var currCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+        ud.setValue(currCell.textLabel?.text!, forKey: "currQuiz")
+        let sb : UIStoryboard = UIStoryboard(name: "quiz", bundle: nil)
+        let wel = sb.instantiateViewController(identifier: "QuizEntrance") as! QuizEntranceViewController
+        present(wel, animated: true, completion: nil)
+    }
+    
     var menu : SideMenuNavigationController?
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nav: UINavigationBar!
     override func viewDidLoad() {
+        tableView.delegate = self
+        tableView.dataSource = self
         super.viewDidLoad()
         menu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
         menu?.leftSide = true

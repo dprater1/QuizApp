@@ -22,11 +22,13 @@ class QuizTakerViewController: UIViewController {
     var questOrder : [Int]?
     var quizAttempt : [Question]?
     var answered : [String]?
+    var quiz : Quiz?
     
     @IBOutlet weak var Abutt: RadioButton!
     
     @IBOutlet weak var BButt: RadioButton!
     
+    @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var CButt: RadioButton!
     @IBOutlet weak var DButt: RadioButton!
     var correct = 0
@@ -43,6 +45,29 @@ class QuizTakerViewController: UIViewController {
         BButt?.alternateButton = [Abutt!, CButt!, DButt!]
         CButt?.alternateButton = [BButt!, Abutt!, DButt!]
         DButt?.alternateButton = [BButt!, CButt!, Abutt!]
+        var timeLeft = 1800
+                
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [self] timer in
+                               
+                        
+            timeLeft -= 1
+                        
+            self.timer.text = "time: " + String(timeLeft / 60) + ":" + String(timeLeft % 60)
+            if(timeLeft==0){
+                timer.invalidate()
+                for n in currQuest...9 {
+                answered!.append(" ")
+                    DBHelper.inst.addQuizAnswer(user : ud.string(forKey: "currUser")!, name: quizName.text!, questions : quizAttempt!, answer: answered!, right: correct)
+                    let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
+                    present(wel, animated: true, completion: nil)
+                    return
+                }
+                                
+                            
+            }
+            
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -51,7 +76,9 @@ class QuizTakerViewController: UIViewController {
     func loadquiz(){
         
         
-        let quiz = DBHelper.inst.getQuiz(query: currQuiz!)
+        if(quiz == nil){
+            quiz = DBHelper.inst.getQuiz(query: currQuiz!)
+        }
         if(quiz != nil){
             
             if(currQuest == 0){
@@ -111,6 +138,9 @@ class QuizTakerViewController: UIViewController {
             let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! ViewController
             present(wel, animated: true, completion: nil)
             return
+        }
+        else{
+            loadquiz()
         }
         
     }

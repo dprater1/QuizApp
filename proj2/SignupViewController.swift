@@ -48,7 +48,7 @@ class SignupViewController: UIViewController {
             
             //back to previous screen
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let wel = sb.instantiateViewController(withIdentifier: "Login") as! ViewController
+            let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
             present(wel, animated: true, completion: nil)
         
         
