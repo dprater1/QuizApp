@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import SideMenu
 
 class SingleCommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let ud = UserDefaults.standard
     var topComment = 0
     var bcColor = UIView()
+    @IBOutlet weak var nav: UINavigationBar!
+    var menu : SideMenuNavigationController?
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -47,11 +50,21 @@ class SingleCommentViewController: UIViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        menu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        nav.setBackgroundImage(UIImage(), for: .default)
+        nav.shadowImage = UIImage()
+        nav.isTranslucent = true
         // Do any additional setup after loading the view.
     }
     
  
+    @IBAction func didTap(_ sender: Any) {
+        present(menu!, animated: true)
+    }
     /*
     // MARK: - Navigation
 

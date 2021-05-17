@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import SideMenu
 
 class AddCommentViewController: UIViewController {
     let ud = UserDefaults.standard
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var commentText: UITextView!
+    @IBOutlet weak var nav: UINavigationBar!
+    var menu : SideMenuNavigationController?
     override func viewDidLoad() {
+        menu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        nav.setBackgroundImage(UIImage(), for: .default)
+        nav.shadowImage = UIImage()
+        nav.isTranslucent = true
+        
         super.viewDidLoad()
         label.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.4, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
         // Do any additional setup after loading the view.
@@ -35,6 +47,10 @@ class AddCommentViewController: UIViewController {
         let sb : UIStoryboard = UIStoryboard(name: "Forum", bundle: nil)
         let wel = sb.instantiateViewController(withIdentifier: "Thread") as! ThreadViewController
         present(wel, animated: true, completion: nil)
+    }
+    
+    @IBAction func didTap(_ sender: Any) {
+        present(menu!, animated: true)
     }
     /*
     // MARK: - Navigation

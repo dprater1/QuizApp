@@ -6,12 +6,24 @@
 //  Created by admin on 5/12/21.
 //
 import UIKit
-
+import SideMenu
+  
 class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let ud = UserDefaults.standard
     var comment :  [Comment]?
     var bcColor = UIView()
+    var menu : SideMenuNavigationController?
+    @IBOutlet weak var nav: UINavigationBar!
     override func viewDidLoad() {
+        menu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        nav.setBackgroundImage(UIImage(), for: .default)
+        nav.shadowImage = UIImage()
+        nav.isTranslucent = true
+        
         super.viewDidLoad()
         comment = DBHelper.inst.getCommentFromThread(query: ud.string(forKey: "currForum") ?? "General")
 
@@ -64,6 +76,10 @@ class ThreadViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
 
+    @IBAction func didTap(_ sender: Any) {
+        present(menu!, animated: true)
+        
+    }
     
 
 

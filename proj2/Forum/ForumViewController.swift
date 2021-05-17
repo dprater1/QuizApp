@@ -5,12 +5,23 @@
 //  Created by admin on 5/11/21.
 //
 import UIKit
+import SideMenu
 
 class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var bcColor = UIView()
     let topics = ["iOS", "General", "Java"]
+    var menu : SideMenuNavigationController?
+    @IBOutlet weak var nav: UINavigationBar!
     let ud = UserDefaults.standard
     override func viewDidLoad() {
+        menu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        nav.setBackgroundImage(UIImage(), for: .default)
+        nav.shadowImage = UIImage()
+        nav.isTranslucent = true
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
@@ -52,5 +63,9 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
 
-
+    @IBAction func didTap(_ sender: Any) {
+        present(menu!, animated: true)
+        
+    }
+    
 }
