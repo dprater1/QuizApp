@@ -69,11 +69,17 @@ class LoginViewController: UIViewController {
                 present(wel, animated: true, completion: nil)
             }
             else{
+                if ud.value(forKey: "currUserBlocked")! as! Bool {
+                    let Alert = UIAlertController(title: "Blocked", message: "Contact an admin to unblock your account", preferredStyle: .alert)
+                    Alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    present(Alert, animated: true, completion: nil)
+                } else {
                 print("username and password matched")
                 ud.setValue(uName.text, forKey: "currUser")
                 
                 let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! WelcomeViewController
                 present(wel, animated: true, completion: nil)
+                }
             }
         }
         else{

@@ -18,9 +18,24 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         //edit information in cell
-        cell.detailTextLabel?.text = String(indexPath.row + 1)
+        cell.detailTextLabel?.text = String(users[indexPath.row].correctAnswered)
         cell.textLabel?.text = users[indexPath.row].username
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            print("1st place gets 30 days")
+            users[indexPath.row].quizzesLeft = -1
+        case 1:
+            print("2nd place gets 30 days")
+            users[indexPath.row].quizzesLeft = -1
+        case 2:
+            print("3rd place gets 30 days")
+            users[indexPath.row].quizzesLeft = -1
+        default:
+            print("you're not special")
+        }
     }
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,6 +43,9 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         super.viewDidLoad()
+        users.sort(by: {
+            $0.correctAnswered > $1.correctAnswered
+        })
 
         // Do any additional setup after loading the view.
     }

@@ -11,6 +11,7 @@ class QuizEntranceViewController: UIViewController {
     let ud = UserDefaults.standard
     var currQuizAns : QuizAnswer?
     
+    @IBOutlet weak var rankingButton: UIButton!
     @IBOutlet weak var takeButton: UIButton!
     @IBOutlet weak var reviewButton: UIButton!
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class QuizEntranceViewController: UIViewController {
             reviewButton.isHidden = false
             reviewButton.setTitle("Review best attempt", for: .normal)
             takeButton.setTitle("Retake Quiz", for: .normal)
+            rankingButton.setTitle("View Rankings", for: .normal)
         }
         else{
             reviewButton.isHidden = true
@@ -42,6 +44,11 @@ class QuizEntranceViewController: UIViewController {
         present(wel, animated: true, completion: nil)
     }
         
+    @IBAction func rankingView(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "quiz", bundle: nil)
+        let wel = sb.instantiateViewController(withIdentifier: "QuizRank") as! QuizRankViewController
+        present(wel, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
