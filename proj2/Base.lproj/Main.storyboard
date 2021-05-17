@@ -126,7 +126,7 @@
         <!--Login View Controller-->
         <scene sceneID="MWN-aw-ktx">
             <objects>
-                <viewController storyboardIdentifier="Login" id="NGJ-Fd-M7c" customClass="LoginViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" modalPresentationStyle="fullScreen" id="NGJ-Fd-M7c" customClass="LoginViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x3X-Iw-bJe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,6 +323,14 @@
                                     <segue destination="un1-b9-Z5A" kind="modal" modalPresentationStyle="fullScreen" id="ya0-Ml-gMX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN1-dK-Y37">
+                                <rect key="frame" x="184" y="408" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BRD-dk-Kuh" kind="modal" modalPresentationStyle="fullScreen" id="Ohw-Ss-XdV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rjW-gv-ElT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -332,6 +340,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gc-vq-mhz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1620" y="-953"/>
+        </scene>
+        <!--Ranking View Controller-->
+        <scene sceneID="Jwg-rM-01J">
+            <objects>
+                <viewController id="BRD-dk-Kuh" customClass="RankingViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aZB-2H-r0S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYf-PX-rMN">
+                                <rect key="frame" x="20" y="44" width="49" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rDc-fY-GtA" kind="modal" modalPresentationStyle="fullScreen" id="zSX-fa-c4D"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="orN-A7-l9k">
+                                <rect key="frame" x="0.0" y="90" width="414" height="620"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="T7m-M4-b5v" detailTextLabel="PnE-et-Qdh" style="IBUITableViewCellStyleValue1" id="zgw-FJ-oPF">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zgw-FJ-oPF" id="2TI-dc-tyF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T7m-M4-b5v">
+                                                    <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PnE-et-Qdh">
+                                                    <rect key="frame" x="361" y="15" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tlt-bn-2hg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zat-h5-Aki"/>
+                    <connections>
+                        <outlet property="tableView" destination="orN-A7-l9k" id="tch-YP-P7K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cih-Zl-jfP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2405.7971014492755" y="-954.24107142857133"/>
         </scene>
         <!--Access View Controller-->
         <scene sceneID="fkW-Vg-W6C">
@@ -611,9 +682,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GBm-Wp-EU4"/>
-        <segue reference="y3E-6J-pe7"/>
-        <segue reference="kXO-VF-eDS"/>
+        <segue reference="yGs-d9-bm6"/>
+        <segue reference="gaI-km-Qr0"/>
+        <segue reference="zSX-fa-c4D"/>
+        <segue reference="vih-Z0-P8j"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Celestial_Questions-3-removebg-preview" width="500" height="500"/>

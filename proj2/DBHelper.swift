@@ -80,6 +80,22 @@ class DBHelper{
             return neededUser
         }
     }
+    
+    func fetchAllUser() -> [User] {
+        var allUsers : [User] = []
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
+        do {
+            let usr = try context!.fetch(fetchReq)
+            let users = usr as! [User]
+            for data in users {
+                allUsers.append(data)
+            }
+        } catch let error{
+            print("error: ", error)
+        }
+        return allUsers
+    }
+    
     func validatePass(uName : String, uPass : String) -> Bool{
         
         //var user = UserD()
