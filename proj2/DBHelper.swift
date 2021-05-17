@@ -426,4 +426,17 @@ class DBHelper{
         }
         return allQuizzes
     }
+    func fetchAllQuizAnswer(quiz : String) -> [QuizAnswer] {
+        var allQuizAnswers : [QuizAnswer] = []
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "QuizAnswer")
+        fetchReq.predicate = NSPredicate(format: "quizname == %@", quiz)
+        do {
+            let quiz = try context!.fetch(fetchReq)
+            let quizzes = quiz as! [QuizAnswer]
+            return quizzes
+        } catch let error{
+            print("error: ", error)
+        }
+        return allQuizAnswers
+    }
 }
