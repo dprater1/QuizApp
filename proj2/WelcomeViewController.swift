@@ -9,6 +9,7 @@ import UIKit
 import SideMenu
 
 class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let ud = UserDefaults.standard
     let quizzes : [Quiz] = DBHelper.inst.fetchAllQuiz()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quizzes.count
@@ -18,6 +19,13 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = quizzes[indexPath.row].name
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var currCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+        ud.setValue(currCell.textLabel?.text!, forKey: "currQuiz")
+        let sb : UIStoryboard = UIStoryboard(name: "quiz", bundle: nil)
+        let wel = sb.instantiateViewController(identifier: "QuizEntrance") as! QuizEntranceViewController
+        present(wel, animated: true, completion: nil)
     }
     
     var menu : SideMenuNavigationController?

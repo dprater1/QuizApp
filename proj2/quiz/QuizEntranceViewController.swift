@@ -31,13 +31,13 @@ class QuizEntranceViewController: UIViewController {
     
     @IBAction func takeQuiz(_ sender: Any) {
         let sb : UIStoryboard = UIStoryboard(name: "quiz", bundle: nil)
-        let wel = sb.instantiateViewController(withIdentifier: "TakeQuiz") as! ViewController
+        let wel = sb.instantiateViewController(withIdentifier: "TakeQuiz") as! QuizTakerViewController
         present(wel, animated: true, completion: nil)
     }
     
     @IBAction func reviewQuiz(_ sender: Any) {
         let sb : UIStoryboard = UIStoryboard(name: "quiz", bundle: nil)
-        let wel = sb.instantiateViewController(withIdentifier: "ReviewQuiz") as! ViewController
+        let wel = sb.instantiateViewController(withIdentifier: "ReviewQuiz") as! ReviewQuizViewController
         present(wel, animated: true, completion: nil)
     }
         

@@ -12,13 +12,13 @@
         <!--Quiz Entrance View Controller-->
         <scene sceneID="fNX-UE-MMg">
             <objects>
-                <viewController restorationIdentifier="QuizEntrance" id="wz1-Jz-4dP" customClass="QuizEntranceViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizEntrance" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wz1-Jz-4dP" customClass="QuizEntranceViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVh-hP-WeI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBy-cA-oc2">
-                                <rect key="frame" x="184" y="190" width="46" height="30"/>
+                                <rect key="frame" x="20" y="190" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO4-oW-PH6">
-                                <rect key="frame" x="184" y="373" width="46" height="30"/>
+                                <rect key="frame" x="20" y="373" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -44,12 +44,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1j-6r-6PG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="106"/>
+            <point key="canvasLocation" x="-868.11594202898561" y="105.80357142857143"/>
         </scene>
         <!--Review Quiz View Controller-->
         <scene sceneID="sx7-3t-NEf">
             <objects>
-                <viewController storyboardIdentifier="ReviewQuiz" id="8E2-qI-kab" customClass="ReviewQuizViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewQuiz" modalPresentationStyle="fullScreen" id="8E2-qI-kab" customClass="ReviewQuizViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nDa-hh-mai">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,7 +154,7 @@
         <!--Quiz Taker View Controller-->
         <scene sceneID="g5P-md-stI">
             <objects>
-                <viewController storyboardIdentifier="TakeQuiz" id="pov-ar-eeZ" customClass="QuizTakerViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TakeQuiz" modalPresentationStyle="fullScreen" id="pov-ar-eeZ" customClass="QuizTakerViewController" customModule="proj2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="071-8d-1Zh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
