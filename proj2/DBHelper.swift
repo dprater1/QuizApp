@@ -12,6 +12,7 @@ import UIKit
 class DBHelper{
     static var inst = DBHelper()
     static var dataCheck = false
+    var ud = UserDefaults.standard
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
     func addNewUser(object : [String:String]){
@@ -24,6 +25,8 @@ class DBHelper{
         user.totalAnswered = 0
         user.correctAnswered = 0
         user.subscribed = false
+        user.isBlocked = false
+        user.quizzesLeft = 2
 
         do{
             try context!.save()
@@ -114,10 +117,10 @@ class DBHelper{
                 let user = data as! User
                 if(uName == user.username && uPass == user.password){
                     DBHelper.dataCheck = true
+                    ud.setValue(user.isBlocked, forKey: "currUserBlocked")
                     return true}
                 else{continue}
-                
-                
+
             }
             DBHelper.dataCheck = false
             return false
@@ -128,7 +131,7 @@ class DBHelper{
             return false
         }
     }
-    func changeAccess(query : String) {
+    func changeAccess(query : String) -> Bool {
            
            let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
            
@@ -138,14 +141,22 @@ class DBHelper{
             let usr = try context!.fetch(fetchReq)
                for data in usr{
                    let user = data as! User
-                   let val = user.value(forKey: "isBlocked") as! Bool
-                       user.setValue(!val, forKey: "isBlocked")
-               }
+                user.isBlocked = !user.isBlocked
+                do{
+                    try context!.save()
+                    print("data saved")
+                }
+                catch{
+                    print("data not saved")
+                }
+                return user.isBlocked
+           }
            }
            catch let error{
                print("error: ", error)
            }
-       }       
+        return false
+       }
        func getCommentFromThread(query : String) -> [Comment]?{
            
            let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Thread")
