@@ -341,12 +341,31 @@ class DBHelper{
                 catch{
                     print("Error getting the current user")
                 }
-        let quizAns = NSEntityDescription.insertNewObject(forEntityName: "QuizAnswer", into: context!) as! QuizAnswer
-        quizAns.quizname = name
-        quizAns.questions = questions
-        quizAns.answers = answer
-        quizAns.user = currUser
-        quizAns.correct = Int16(right)
+        DBHelper.dataCheck = false
+        let oldQuizAns = getQuizAnswer(user: user, quiz: name)
+        if(DBHelper.dataCheck){
+            if(oldQuizAns!.correct <= right){
+                let quizAns = NSEntityDescription.insertNewObject(forEntityName: "QuizAnswer", into: context!) as! QuizAnswer
+                quizAns.quizname = name
+                quizAns.questions = questions
+                quizAns.answers = answer
+                quizAns.user = currUser
+                quizAns.correct = Int16(right)
+                currUser!.correctAnswered  -= Int64(oldQuizAns!.correct)
+                currUser!.correctAnswered += Int64(right)
+                
+            }
+        }
+        else{
+            let quizAns = NSEntityDescription.insertNewObject(forEntityName: "QuizAnswer", into: context!) as! QuizAnswer
+            quizAns.quizname = name
+            quizAns.questions = questions
+            quizAns.answers = answer
+            quizAns.user = currUser
+            quizAns.correct = Int16(right)
+            currUser!.correctAnswered += Int64(right)
+        }
+        
         
         do{
             try context!.save()

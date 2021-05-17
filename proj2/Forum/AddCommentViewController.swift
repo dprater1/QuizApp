@@ -10,10 +10,11 @@ import UIKit
 class AddCommentViewController: UIViewController {
     let ud = UserDefaults.standard
 
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var commentText: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        label.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.4, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +28,7 @@ class AddCommentViewController: UIViewController {
             return
             
         }
+        
         let comment = Comment(author: ud.string(forKey: "currUser") ?? "Unknown User", text: commentText.text, thread: ud.string(forKey: "currForum") ?? "General")
         DBHelper.inst.addCommentToThread(comment: comment)
         

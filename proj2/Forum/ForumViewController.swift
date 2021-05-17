@@ -8,7 +8,7 @@ import UIKit
 
 class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var bcColor = UIView()
-    let topics = ["iOS", "General", "Java"]
+    let topics = ["General", "iOS", "Java", "Python"]
     let ud = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
