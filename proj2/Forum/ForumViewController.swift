@@ -11,6 +11,9 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var bcColor = UIView()
     let topics = ["General", "iOS", "Java", "Python"]
     let ud = UserDefaults.standard
+    @IBOutlet weak var nav: UINavigationBar!
+    var menu : SideMenuNavigationController?
+
     override func viewDidLoad() {
         menu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
         menu?.leftSide = true

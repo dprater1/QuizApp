@@ -113,7 +113,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="nav" destination="6Y1-lh-qql" id="KGa-rJ-WZM"/>
+                        <outlet property="nav" destination="6Y1-lh-qql" id="2NX-39-ffv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GlM-1T-Qws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
