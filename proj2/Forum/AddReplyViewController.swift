@@ -10,7 +10,9 @@ import UIKit
 class AddReplyViewController: UIViewController {
     let ud = UserDefaults.standard
     @IBOutlet weak var text: UITextView!
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
+        label.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.4, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -26,6 +28,7 @@ class AddReplyViewController: UIViewController {
             return
             
         }
+        
         var listOfComments = DBHelper.inst.getCommentFromThread(query: ud.string(forKey: "currForum") ?? "General")
         let topComment = ud.integer(forKey: "comment")
         var currComment = listOfComments![topComment]
