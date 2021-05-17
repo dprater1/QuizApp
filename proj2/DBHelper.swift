@@ -309,7 +309,7 @@ class DBHelper{
     }
     func getQuiz(query : String) -> Quiz?{
         var quiz : Quiz?
-        let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Thread")
+        let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "Quiz")
         
         fetchReq.predicate = NSPredicate(format: "name == %@", query)
         do{

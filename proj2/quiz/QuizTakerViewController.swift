@@ -27,15 +27,15 @@ class QuizTakerViewController: UIViewController {
     @IBOutlet weak var Abutt: RadioButton!
     
     @IBOutlet weak var BButt: RadioButton!
-    
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var CButt: RadioButton!
     @IBOutlet weak var DButt: RadioButton!
     var correct = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        var currQuest = ud.integer(forKey: "currQuest") ?? 0
+        currQuest = ud.integer(forKey: "currQuest") ?? 0
         currQuiz = ud.string(forKey: "currQuiz") ?? "unknownQuiz"
+        print(currQuiz)
         loadquiz()
         Abutt.isSelected = false
         BButt.isSelected = false
@@ -55,7 +55,7 @@ class QuizTakerViewController: UIViewController {
             self.timer.text = "time: " + String(timeLeft / 60) + ":" + String(timeLeft % 60)
             if(timeLeft==0){
                 timer.invalidate()
-                for n in currQuest...9 {
+                for n in currQuest!...9 {
                 answered!.append(" ")
                     DBHelper.inst.addQuizAnswer(user : ud.string(forKey: "currUser")!, name: quizName.text!, questions : quizAttempt!, answer: answered!, right: correct)
                     let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -85,6 +85,7 @@ class QuizTakerViewController: UIViewController {
                 questOrder = Array(0...quiz!.questions!.count)
                 questOrder!.shuffle()
             }
+            print(currQuest)
             quest = quiz!.questions![currQuest!]
             quizName.text = quiz!.name
             question.text = "question " + String(currQuest! + 1) + quest!.question
