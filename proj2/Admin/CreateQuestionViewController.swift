@@ -23,6 +23,9 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
         cell.textLabel?.text = questions[indexPath.row]
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
     
     func doesQuestionExist(question : String) -> Bool {
         for data in questions {
