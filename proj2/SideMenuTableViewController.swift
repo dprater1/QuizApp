@@ -94,12 +94,12 @@ class SideMenuTableViewController: UITableViewController {
             
         }
         if(indexPath.row == 5){
-            var user = DBHelper.init().fetchUser(query: ud.string(forKey: "currUser") ?? "Not Subscribed")
-            if(user?.subscribed != false){
-                textData[indexPath.row] = "30 days remaining"
+            var user = DBHelper.init().fetchUser(query: ud.string(forKey: "currUser")!)
+            if(user!.subscribed){
+                cell.configure(imageNamed: imgData[indexPath.row], label: "30 days remain", color: .black)
             }
             else{
-                textData[indexPath.row] = "Not Subscribed"
+                cell.configure(imageNamed: imgData[indexPath.row], label: "Not Subbed", color: .black)
             }
             
         }
