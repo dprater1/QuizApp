@@ -56,6 +56,12 @@ class QuizEntranceViewController: UIViewController {
         let wel = sb.instantiateViewController(withIdentifier: "QuizRank") as! QuizRankViewController
         present(wel, animated: true, completion: nil)
     }
+    @IBAction func back(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! WelcomeViewController
+        self.present(wel, animated: true, completion: nil)
+    
+    }
     /*
     // MARK: - Navigation
 

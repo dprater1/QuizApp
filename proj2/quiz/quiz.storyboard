@@ -168,6 +168,17 @@
                                     <action selector="reviewQuiz:" destination="wz1-Jz-4dP" eventType="touchUpInside" id="3h9-xV-cGP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpU-JB-KAd">
+                                <rect key="frame" x="20" y="44" width="52" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="wz1-Jz-4dP" eventType="touchUpInside" id="OnW-zO-nHs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ELB-gj-tuQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

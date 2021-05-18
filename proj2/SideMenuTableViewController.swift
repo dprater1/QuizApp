@@ -118,16 +118,19 @@ class SideMenuTableViewController: UITableViewController {
             LoginViewController.loginManager.logOut()
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            wel.modalPresentationStyle = .fullScreen
             present(wel, animated: true, completion: nil)
         }
         if(indexPath.row == 3){
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "Subscribe") as! SubscribeViewController
+            
             present(wel, animated: true, completion: nil)
         }
         if(indexPath.row == 4){
             let sb : UIStoryboard = UIStoryboard(name: "quiz", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "QuizRank") as! QuizRankViewController
+            wel.modalPresentationStyle = .fullScreen
             present(wel, animated: true, completion: nil)
         }
         if(indexPath.row == 6){
@@ -138,6 +141,7 @@ class SideMenuTableViewController: UITableViewController {
         if(indexPath.row == 7){
             let sb : UIStoryboard = UIStoryboard(name: "Forum", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "forum") as! ForumViewController
+            wel.modalPresentationStyle = .fullScreen
             present(wel, animated: true, completion: nil)
         }
     }

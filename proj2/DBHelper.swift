@@ -471,4 +471,16 @@ class DBHelper{
         }
         return allQuizAnswers
     }
+    func resetAllEntities(_ entity : String){
+            let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+            let deleteReq = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+            do{
+                try context?.execute(deleteReq)
+                try context?.save()
+
+            }
+            catch {
+                print("error")
+            }
+        }
 }
