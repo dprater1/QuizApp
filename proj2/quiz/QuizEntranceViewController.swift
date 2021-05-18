@@ -18,7 +18,7 @@ class QuizEntranceViewController: UIViewController {
         super.viewDidLoad()
         currUser = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
         DBHelper.inst.getQuizAnswer(user: ud.string(forKey: "currUser") ?? "", quiz: ud.string(forKey: "currQuiz") ?? "unknownQuiz")
-        
+        takeButton.isHidden = false
         if(DBHelper.dataCheck){
             reviewButton.isHidden = false
             reviewButton.setTitle("Review best attempt", for: .normal)
