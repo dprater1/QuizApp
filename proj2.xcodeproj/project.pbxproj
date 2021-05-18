@@ -41,6 +41,8 @@
 		8449E81B264ADA8E005B4D68 /* comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E81A264ADA8E005B4D68 /* comment.swift */; };
 		8449E81F264ADD1C005B4D68 /* Thread+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E81D264ADD1C005B4D68 /* Thread+CoreDataClass.swift */; };
 		8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E81E264ADD1C005B4D68 /* Thread+CoreDataProperties.swift */; };
+		84B274EA265405B0004FCFE6 /* Review+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B274E8265405B0004FCFE6 /* Review+CoreDataClass.swift */; };
+		84B274EB265405B0004FCFE6 /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B274E9265405B0004FCFE6 /* Review+CoreDataProperties.swift */; };
 		84DE687B264C76B800380FC3 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE687A264C76B800380FC3 /* ThreadViewController.swift */; };
 		84DE6880264C770E00380FC3 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE687F264C770E00380FC3 /* AdminViewController.swift */; };
 		84DE6883264C774300380FC3 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6882264C774300380FC3 /* CommentTableViewCell.swift */; };
@@ -116,6 +118,8 @@
 		8449E81A264ADA8E005B4D68 /* comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comment.swift; sourceTree = "<group>"; };
 		8449E81D264ADD1C005B4D68 /* Thread+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8449E81E264ADD1C005B4D68 /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		84B274E8265405B0004FCFE6 /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84B274E9265405B0004FCFE6 /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84DE687A264C76B800380FC3 /* ThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 		84DE687F264C770E00380FC3 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		84DE6882264C774300380FC3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 		4059775F2649A41D0093870E = {
 			isa = PBXGroup;
 			children = (
+				84B274E8265405B0004FCFE6 /* Review+CoreDataClass.swift */,
+				84B274E9265405B0004FCFE6 /* Review+CoreDataProperties.swift */,
 				8449E81D264ADD1C005B4D68 /* Thread+CoreDataClass.swift */,
 				8449E81E264ADD1C005B4D68 /* Thread+CoreDataProperties.swift */,
 				8449E79B2649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift */,
@@ -423,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8449E816264A3474005B4D68 /* LoginViewController.swift in Sources */,
+				84B274EA265405B0004FCFE6 /* Review+CoreDataClass.swift in Sources */,
 				15810B2A264D7A8200A3489B /* QuizViewController.swift in Sources */,
 				8449E81F264ADD1C005B4D68 /* Thread+CoreDataClass.swift in Sources */,
 				15810B2C264D7AA000A3489B /* CreateQuestionViewController.swift in Sources */,
@@ -446,6 +453,7 @@
 				84DE6883264C774300380FC3 /* CommentTableViewCell.swift in Sources */,
 				4059776E2649A41D0093870E /* SceneDelegate.swift in Sources */,
 				84DE687B264C76B800380FC3 /* ThreadViewController.swift in Sources */,
+				84B274EB265405B0004FCFE6 /* Review+CoreDataProperties.swift in Sources */,
 				8449E7A22649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift in Sources */,
 				405977762649A41E0093870E /* proj2.xcdatamodeld in Sources */,
 				8449E81B264ADA8E005B4D68 /* comment.swift in Sources */,
