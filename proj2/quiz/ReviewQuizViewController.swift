@@ -28,6 +28,11 @@ class ReviewQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        answer1.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.6, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        answer2.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.6, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        answer3.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.6, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        answer4.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.6, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        
         currQuiz = DBHelper.inst.getQuizAnswer(user: ud.string(forKey: "currUser")!, quiz: ud.string(forKey: "currQuiz")!)
         changeQuestion()
         

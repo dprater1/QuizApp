@@ -40,10 +40,10 @@ class RadioButton: UIButton {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                let image = UIImage(named: "selected")
+                let image = UIImage(named: "selected1")
                 self.setBackgroundImage(image, for: .normal)
             } else {
-                let image = UIImage(named: "unselected")
+                let image = UIImage(named: "unselected1")
                 self.setBackgroundImage(image, for: .normal)
             }
         }
