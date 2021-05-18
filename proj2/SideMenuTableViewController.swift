@@ -8,12 +8,16 @@
 import UIKit
 
 class SideMenuTableViewController: UITableViewController {
+    
+    
     var bcColor = UIView()
     var ud = UserDefaults()
-    var textData = ["","Username Here","Log Out","Subscribe","Current Rank", ""]
-    var imgData = ["","","pip.exit","dollarsign.square","star", "clock"]
+    
+    var textData = ["","","Log Out","Subscribe","Current Rank", "", "Review"]
+    var imgData = ["","","pip.exit","dollarsign.square","star", "clock", "pencil"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.register(UITableViewCell.self , forCellReuseIdentifier:"cell")
                 // Uncomment the following line to preserve selection between presentations
         tableView.backgroundView = UIImageView(image: UIImage(named: "blueishpinkgradient"))
@@ -73,6 +77,8 @@ class SideMenuTableViewController: UITableViewController {
         if(indexPath.row == 1){
             
             let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.identifier, for: indexPath) as! ImageTableViewCell
+            var current = DBHelper.init().fetchUser(query: ud.string(forKey: "currUser") ?? "Username")
+            textData[indexPath.row] = current?.username! ?? ""
             cell.configure(label: textData[indexPath.row])
             cell.backgroundColor = .clear
             bcColor.backgroundColor = .clear
@@ -88,8 +94,8 @@ class SideMenuTableViewController: UITableViewController {
             
         }
         if(indexPath.row == 5){
-            var user = DBHelper.init().fetchUser(query: ud.string(forKey: "currentUser") ?? "")
-            if(user?.subscribed ?? false){
+            var user = DBHelper.init().fetchUser(query: ud.string(forKey: "currUser") ?? "Not Subscribed")
+            if(user?.subscribed != false){
                 textData[indexPath.row] = "30 days remaining"
             }
             else{
@@ -107,6 +113,12 @@ class SideMenuTableViewController: UITableViewController {
         
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if(indexPath.row == 2){
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            present(wel, animated: true, completion: nil)
+        }
         if(indexPath.row == 3){
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "Subscribe") as! SubscribeViewController
