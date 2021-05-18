@@ -115,6 +115,7 @@ class SideMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if(indexPath.row == 2){
+            LoginViewController.loginManager.logOut()
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
             present(wel, animated: true, completion: nil)

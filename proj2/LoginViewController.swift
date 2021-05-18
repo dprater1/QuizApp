@@ -132,7 +132,7 @@ class LoginViewController: UIViewController {
             }
         })
            } else {
-            print("already logged in")
+            print("you shouldn't be here")
             LoginViewController.loginManager.logOut()
             print("User logout succesfully")
            }
