@@ -125,7 +125,16 @@ class SideMenuTableViewController: UITableViewController {
             let wel = sb.instantiateViewController(withIdentifier: "Subscribe") as! SubscribeViewController
             present(wel, animated: true, completion: nil)
         }
-        
+        if(indexPath.row == 4){
+            let sb : UIStoryboard = UIStoryboard(name: "quiz", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "QuizRank") as! QuizRankViewController
+            present(wel, animated: true, completion: nil)
+        }
+        if(indexPath.row == 6){
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "speech") as! ReviewSpeechViewController
+            present(wel, animated: true, completion: nil)
+        }
     }
     
        /*

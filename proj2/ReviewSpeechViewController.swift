@@ -15,8 +15,11 @@ class ReviewSpeechViewController: UIViewController, SFSpeechRecognizerDelegate {
     var rTask : SFSpeechRecognitionTask!
     var isStart = false
     
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textLab: UILabel!
     override func viewDidLoad() {
+        label.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.5, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        label.sendSubviewToBack(view)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -26,11 +29,11 @@ class ReviewSpeechViewController: UIViewController, SFSpeechRecognizerDelegate {
             isStart = !isStart
             if isStart {
                 startSpeechRecog()
-                sender.setTitle("click here to stop speech rec", for: .normal)
+                sender.setTitle("Click to stop", for: .normal)
             }
             else{
                 cancelSpeechRecog()
-                sender.setTitle("click here to start speech rec", for: .normal)
+                sender.setTitle("Click to start", for: .normal)
             }
     }
     
