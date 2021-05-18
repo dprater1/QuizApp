@@ -26,6 +26,9 @@
 		4059CCA6264D7C4500301C4E /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059CCA5264D7C4500301C4E /* ImageTableViewCell.swift */; };
 		4059CCC2264DC3EE00301C4E /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059CCC1264DC3EE00301C4E /* IconTableViewCell.swift */; };
 		4059CCC7264DD1C600301C4E /* LogoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059CCC6264DD1C600301C4E /* LogoTableViewCell.swift */; };
+		842E0B1A26531742003A4718 /* QuizRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E0B1926531742003A4718 /* QuizRankViewController.swift */; };
+		842E0B1F26532072003A4718 /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E0B1E26532072003A4718 /* RankTableViewCell.swift */; };
+		842E0B23265366E5003A4718 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E0B22265366E5003A4718 /* SubscribeViewController.swift */; };
 		8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79B2649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift */; };
 		8449E7A22649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79C2649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift */; };
 		8449E7A32649AD20005B4D68 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E79D2649AD20005B4D68 /* User+CoreDataClass.swift */; };
@@ -98,6 +101,9 @@
 		4059CCA5264D7C4500301C4E /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		4059CCC1264DC3EE00301C4E /* IconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
 		4059CCC6264DD1C600301C4E /* LogoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTableViewCell.swift; sourceTree = "<group>"; };
+		842E0B1926531742003A4718 /* QuizRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRankViewController.swift; sourceTree = "<group>"; };
+		842E0B1E26532072003A4718 /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
+		842E0B22265366E5003A4718 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		8449E79B2649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizAnswer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8449E79C2649AD20005B4D68 /* QuizAnswer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizAnswer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8449E79D2649AD20005B4D68 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 				8449E80F264A3146005B4D68 /* SignupViewController.swift */,
 				8449E812264A3230005B4D68 /* DBHelper.swift */,
 				8449E815264A3474005B4D68 /* LoginViewController.swift */,
+				842E0B22265366E5003A4718 /* SubscribeViewController.swift */,
 				8449E81A264ADA8E005B4D68 /* comment.swift */,
 				4050109E264C1B33000DE388 /* WelcomeViewController.swift */,
 				405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */,
@@ -261,6 +268,8 @@
 				84F071EF264F08FC002B9555 /* RadioButton.swift */,
 				84F071F92651B7E1002B9555 /* QuizEntranceViewController.swift */,
 				84F071FE2651BCCC002B9555 /* ReviewQuizViewController.swift */,
+				842E0B1926531742003A4718 /* QuizRankViewController.swift */,
+				842E0B1E26532072003A4718 /* RankTableViewCell.swift */,
 			);
 			path = quiz;
 			sourceTree = "<group>";
@@ -422,6 +431,7 @@
 				8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */,
 				405977702649A41D0093870E /* ViewController.swift in Sources */,
 				4059CC93264D6C0600301C4E /* Views.swift in Sources */,
+				842E0B23265366E5003A4718 /* SubscribeViewController.swift in Sources */,
 				8449E7A62649AD20005B4D68 /* Quiz+CoreDataProperties.swift in Sources */,
 				15810B3C264DA46800A3489B /* QuestionAnswersViewController.swift in Sources */,
 				8449E7A42649AD20005B4D68 /* User+CoreDataProperties.swift in Sources */,
@@ -429,6 +439,8 @@
 				84F071ED264F0792002B9555 /* QuizTakerViewController.swift in Sources */,
 				4059776C2649A41D0093870E /* AppDelegate.swift in Sources */,
 				84DE6897264D8E9300380FC3 /* CommentContainer.swift in Sources */,
+				842E0B1A26531742003A4718 /* QuizRankViewController.swift in Sources */,
+				842E0B1F26532072003A4718 /* RankTableViewCell.swift in Sources */,
 				4050109F264C1B33000DE388 /* WelcomeViewController.swift in Sources */,
 				8449E810264A3146005B4D68 /* SignupViewController.swift in Sources */,
 				84DE6883264C774300380FC3 /* CommentTableViewCell.swift in Sources */,

@@ -23,6 +23,8 @@ extension User {
     @NSManaged public var username: String?
     @NSManaged private var comments: [Comment]?
     @NSManaged public var user: NSSet?
+    @NSManaged public var isBlocked : Bool
+    @NSManaged public var quizzesLeft : Int64
 
 }
 

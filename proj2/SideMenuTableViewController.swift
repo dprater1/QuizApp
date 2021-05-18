@@ -107,6 +107,11 @@ class SideMenuTableViewController: UITableViewController {
         
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row == 3){
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "Subscribe") as! SubscribeViewController
+            present(wel, animated: true, completion: nil)
+        }
         
     }
     

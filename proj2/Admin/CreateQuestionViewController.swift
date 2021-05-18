@@ -18,10 +18,13 @@ class CreateQuestionViewController: UIViewController, UITableViewDelegate, UITab
     //cell for row at indexPath
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+        cell.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.8, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
         //edit information in cell
         cell.textLabel?.text = questions[indexPath.row]
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
     }
     
     func doesQuestionExist(question : String) -> Bool {

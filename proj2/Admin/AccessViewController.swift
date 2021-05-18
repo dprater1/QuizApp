@@ -22,7 +22,15 @@ class AccessViewController: UIViewController {
             present(Alert, animated: true, completion: nil)
         } else {
             if DBHelper.inst.userExist(query: username.text!) {
-                DBHelper.inst.changeAccess(query: username.text!)
+                if DBHelper.inst.changeAccess(query: username.text!) {
+                    let Alert = UIAlertController(title: "Blocked!", message: "\(username.text!) is blocked!", preferredStyle: .alert)
+                    Alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    present(Alert, animated: true, completion: nil)
+                } else {
+                    let Alert = UIAlertController(title: "Unblocked!", message: "\(username.text!) is unblocked!", preferredStyle: .alert)
+                    Alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    present(Alert, animated: true, completion: nil)
+                }
             } else {
                 let Alert = UIAlertController(title: "No Such User", message: "User does not exist", preferredStyle: .alert)
                 Alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))

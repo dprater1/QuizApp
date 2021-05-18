@@ -21,20 +21,27 @@ class ReviewQuizViewController: UIViewController {
     @IBOutlet weak var imageC: UIImageView!
     @IBOutlet weak var imageD: UIImageView!
     
+    @IBOutlet weak var unansweredOutlet: UILabel!
     var currQuiz : QuizAnswer?
     var currQuest : Question?
     var questNum = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        answer1.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.6, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        answer2.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.6, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        answer3.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.6, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        answer4.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.6, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        
         currQuiz = DBHelper.inst.getQuizAnswer(user: ud.string(forKey: "currUser")!, quiz: ud.string(forKey: "currQuiz")!)
-        currQuest = currQuiz!.questions![questNum]
+        changeQuestion()
         
 
         // Do any additional setup after loading the view.
     }
     func changeQuestion(){
-        questionLabel.text = "question " + String(questNum + 1) + currQuest!.question
+        currQuest = currQuiz!.questions![questNum]
+        questionLabel.text = "question " + String(questNum + 1) + ": "  + currQuest!.question
         answer1.text = currQuest!.a
         answer2.text = currQuest!.b
         answer3.text = currQuest!.c
@@ -43,20 +50,27 @@ class ReviewQuizViewController: UIViewController {
         imageB.isHidden = true
         imageC.isHidden = true
         imageD.isHidden = true
-        
+        unansweredOutlet.isHidden = true
+        print(currQuiz!.answers![questNum])
         switch currQuiz!.answers![questNum] {
         case currQuest!.a:
+            print("a")
             imageA.isHidden = false
-            imageA.image = UIImage(contentsOfFile: "wrong")
+            imageA.image = UIImage(named: "wrong")
         case currQuest!.b:
+            print("b")
             imageB.isHidden = false
-            imageB.image = UIImage(contentsOfFile: "wrong")
+            imageB.image = UIImage(named: "wrong")
         case currQuest!.c:
+            print("c")
             imageC.isHidden = false
-            imageC.image = UIImage(contentsOfFile: "wrong")
+            imageC.image = UIImage(named: "wrong")
         case currQuest!.d:
+            print("d")
             imageD.isHidden = false
-            imageD.image = UIImage(contentsOfFile: "wrong")
+            imageD.image = UIImage(named: "wrong")
+        case " ":
+            unansweredOutlet.isHidden = false
             
         default:
             print("error")
@@ -65,16 +79,16 @@ class ReviewQuizViewController: UIViewController {
         switch currQuest!.correct {
         case currQuest!.a:
             imageA.isHidden = false
-            imageA.image = UIImage(contentsOfFile: "correct")
+            imageA.image = UIImage(named: "correct")
         case currQuest!.b:
             imageB.isHidden = false
-            imageB.image = UIImage(contentsOfFile: "correct")
+            imageB.image = UIImage(named: "correct")
         case currQuest!.c:
             imageC.isHidden = false
-            imageC.image = UIImage(contentsOfFile: "correct")
+            imageC.image = UIImage(named: "correct")
         case currQuest!.d:
             imageD.isHidden = false
-            imageD.image = UIImage(contentsOfFile: "correct")
+            imageD.image = UIImage(named: "correct")
             
         default:
             print("error")
