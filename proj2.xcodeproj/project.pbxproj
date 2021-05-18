@@ -43,6 +43,7 @@
 		8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449E81E264ADD1C005B4D68 /* Thread+CoreDataProperties.swift */; };
 		84B274EA265405B0004FCFE6 /* Review+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B274E8265405B0004FCFE6 /* Review+CoreDataClass.swift */; };
 		84B274EB265405B0004FCFE6 /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B274E9265405B0004FCFE6 /* Review+CoreDataProperties.swift */; };
+		84B2750126541528004FCFE6 /* ReviewSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2750026541528004FCFE6 /* ReviewSpeechViewController.swift */; };
 		84DE687B264C76B800380FC3 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE687A264C76B800380FC3 /* ThreadViewController.swift */; };
 		84DE6880264C770E00380FC3 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE687F264C770E00380FC3 /* AdminViewController.swift */; };
 		84DE6883264C774300380FC3 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE6882264C774300380FC3 /* CommentTableViewCell.swift */; };
@@ -120,6 +121,7 @@
 		8449E81E264ADD1C005B4D68 /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84B274E8265405B0004FCFE6 /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataClass.swift"; sourceTree = "<group>"; };
 		84B274E9265405B0004FCFE6 /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		84B2750026541528004FCFE6 /* ReviewSpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSpeechViewController.swift; sourceTree = "<group>"; };
 		84DE687A264C76B800380FC3 /* ThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 		84DE687F264C770E00380FC3 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		84DE6882264C774300380FC3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				405010A2264C1C4F000DE388 /* SideMenuTableViewController.swift */,
 				4059CC92264D6C0600301C4E /* Views.swift */,
 				15B82FD82652192700C8C256 /* question.swift */,
+				84B2750026541528004FCFE6 /* ReviewSpeechViewController.swift */,
 			);
 			path = proj2;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				8449E7A12649AD20005B4D68 /* QuizAnswer+CoreDataClass.swift in Sources */,
 				84F071F0264F08FC002B9555 /* RadioButton.swift in Sources */,
 				8449E820264ADD1C005B4D68 /* Thread+CoreDataProperties.swift in Sources */,
+				84B2750126541528004FCFE6 /* ReviewSpeechViewController.swift in Sources */,
 				405977702649A41D0093870E /* ViewController.swift in Sources */,
 				4059CC93264D6C0600301C4E /* Views.swift in Sources */,
 				842E0B23265366E5003A4718 /* SubscribeViewController.swift in Sources */,
