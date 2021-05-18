@@ -9,6 +9,7 @@ import UIKit
 import SideMenu
 
 class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var bcColor = UIView()
     let ud = UserDefaults.standard
     let quizzes : [Quiz] = DBHelper.inst.fetchAllQuiz()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -18,7 +19,9 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.rowHeight = 100
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.addShadow(backgroundColor: .white, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.8, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
+        
+        bcColor.backgroundColor = UIColor(red: 212/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1)
+        cell.addShadow(backgroundColor: bcColor.backgroundColor!, cornerRadius: 13, shadowRadius: 5, shadowOpacity: 0.8, shadowPathInset: (dx: 16, dy: 6), shadowPathOffset: (dx: 0, dy: 2))
         cell.textLabel?.text = quizzes[indexPath.row].name
         return cell
     }

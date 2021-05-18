@@ -138,4 +138,11 @@ class LoginViewController: UIViewController {
            }
     }
     
+    @IBAction func deletes(_ sender: Any) {
+        DBHelper.inst.resetAllEntities("Quiz")
+        DBHelper.inst.resetAllEntities("Thread")
+        DBHelper.inst.resetAllEntities("QuizAnswer")
+        DBHelper.inst.resetAllEntities("User")
+        print("deleted")
+    }
 }

@@ -95,7 +95,7 @@ class QuizTakerViewController: UIViewController {
             print(currQuest)
             quest = quiz!.questions![currQuest!]
             quizName.text = quiz!.name
-            question.text = "question " + String(currQuest! + 1) + ": " + quest!.question
+            question.text = "Question " + String(currQuest! + 1) + ": " + quest!.question
             answer1.text = quest!.a
             answer2.text = quest!.b
             answer3.text = quest!.c
