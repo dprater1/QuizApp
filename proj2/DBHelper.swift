@@ -373,6 +373,9 @@ class DBHelper{
             quizAns.questions = questions
             quizAns.answers = answer
             quizAns.user = currUser
+            if (currUser!.quizzesLeft > 0){
+                currUser!.quizzesLeft -= 1
+            }
             quizAns.correct = Int16(right)
             currUser!.correctAnswered += Int64(right)
         }
