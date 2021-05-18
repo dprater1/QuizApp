@@ -64,6 +64,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		15B82FF52654294E00C8C256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 405010A8264C2055000DE388 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC8F4D0BE3B0C192EBA4A93F8887D89F;
+			remoteInfo = FBSDKCoreKit;
+		};
+		15B82FF72654294E00C8C256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 405010A8264C2055000DE388 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B65A065AB8123E828A0FD4002F687A71;
+			remoteInfo = "FBSDKCoreKit-FacebookSDKStrings";
+		};
+		15B82FF92654294E00C8C256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 405010A8264C2055000DE388 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DE0FEFC3995E740EC1AE2611D0AEFB0;
+			remoteInfo = FBSDKLoginKit;
+		};
 		405010AD264C2055000DE388 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 405010A8264C2055000DE388 /* Pods.xcodeproj */;
@@ -158,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				84DE687F264C770E00380FC3 /* AdminViewController.swift */,
+				84DE6888264C779B00380FC3 /* ForumViewController.swift */,
 				15810B2D264D7AB200A3489B /* AccessViewController.swift */,
 				15B82FD22651D95200C8C256 /* RankingViewController.swift */,
 				15810B29264D7A8200A3489B /* QuizViewController.swift */,
@@ -179,6 +201,9 @@
 		405010A9264C2055000DE388 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				15B82FF62654294E00C8C256 /* FBSDKCoreKit.framework */,
+				15B82FF82654294E00C8C256 /* FacebookSDKStrings.bundle */,
+				15B82FFA2654294E00C8C256 /* FBSDKLoginKit.framework */,
 				405010AE264C2055000DE388 /* Pods_proj2.framework */,
 				405010B0264C2055000DE388 /* SideMenu.framework */,
 			);
@@ -258,7 +283,6 @@
 				84DE687A264C76B800380FC3 /* ThreadViewController.swift */,
 				84DE6882264C774300380FC3 /* CommentTableViewCell.swift */,
 				84DE6885264C776D00380FC3 /* ForumTableViewCell.swift */,
-				84DE6888264C779B00380FC3 /* ForumViewController.swift */,
 				84DE6893264D76A700380FC3 /* AddCommentViewController.swift */,
 				84DE6899264D91A000380FC3 /* comments.swift */,
 				84DE6896264D8E9300380FC3 /* CommentContainer.swift */,
@@ -353,6 +377,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		15B82FF62654294E00C8C256 /* FBSDKCoreKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBSDKCoreKit.framework;
+			remoteRef = 15B82FF52654294E00C8C256 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		15B82FF82654294E00C8C256 /* FacebookSDKStrings.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FacebookSDKStrings.bundle;
+			remoteRef = 15B82FF72654294E00C8C256 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		15B82FFA2654294E00C8C256 /* FBSDKLoginKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBSDKLoginKit.framework;
+			remoteRef = 15B82FF92654294E00C8C256 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		405010AE264C2055000DE388 /* Pods_proj2.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
