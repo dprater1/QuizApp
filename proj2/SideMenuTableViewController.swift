@@ -13,8 +13,8 @@ class SideMenuTableViewController: UITableViewController {
     var bcColor = UIView()
     var ud = UserDefaults()
     
-    var textData = ["","","Log Out","Subscribe","Current Rank", "", "Review"]
-    var imgData = ["","","pip.exit","dollarsign.square","star", "clock", "pencil"]
+    var textData = ["","","Log Out","Subscribe","Current Rank", "", "Review","Forum"]
+    var imgData = ["","","pip.exit","dollarsign.square","star", "clock", "pencil","person.3"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -133,6 +133,11 @@ class SideMenuTableViewController: UITableViewController {
         if(indexPath.row == 6){
             let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let wel = sb.instantiateViewController(withIdentifier: "speech") as! ReviewSpeechViewController
+            present(wel, animated: true, completion: nil)
+        }
+        if(indexPath.row == 7){
+            let sb : UIStoryboard = UIStoryboard(name: "Forum", bundle: nil)
+            let wel = sb.instantiateViewController(withIdentifier: "forum") as! ForumViewController
             present(wel, animated: true, completion: nil)
         }
     }

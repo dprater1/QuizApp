@@ -179,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				84DE687F264C770E00380FC3 /* AdminViewController.swift */,
-				84DE6888264C779B00380FC3 /* ForumViewController.swift */,
 				15810B2D264D7AB200A3489B /* AccessViewController.swift */,
 				15B82FD22651D95200C8C256 /* RankingViewController.swift */,
 				15810B29264D7A8200A3489B /* QuizViewController.swift */,
@@ -287,6 +286,7 @@
 				84DE6899264D91A000380FC3 /* comments.swift */,
 				84DE6896264D8E9300380FC3 /* CommentContainer.swift */,
 				84DE688E264D6C6C00380FC3 /* Forum.storyboard */,
+				84DE6888264C779B00380FC3 /* ForumViewController.swift */,
 				84F071B9264EBCA1002B9555 /* SingleCommentViewController.swift */,
 				84F071BC264EC5FB002B9555 /* AddReplyViewController.swift */,
 			);
