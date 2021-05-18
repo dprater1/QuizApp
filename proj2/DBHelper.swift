@@ -131,6 +131,17 @@ class DBHelper{
             return false
         }
     }
+    func subscribe(query : String){
+        let user = DBHelper.inst.fetchUser(query: query)
+        user?.subscribed = true
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
     func changeAccess(query : String) -> Bool {
            
            let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
@@ -373,6 +384,9 @@ class DBHelper{
             quizAns.questions = questions
             quizAns.answers = answer
             quizAns.user = currUser
+            if (currUser!.quizzesLeft > 0){
+                currUser!.quizzesLeft -= 1
+            }
             quizAns.correct = Int16(right)
             currUser!.correctAnswered += Int64(right)
         }
