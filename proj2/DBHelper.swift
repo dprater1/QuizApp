@@ -131,6 +131,17 @@ class DBHelper{
             return false
         }
     }
+    func subscribe(query : String){
+        let user = DBHelper.inst.fetchUser(query: query)
+        user?.subscribed = true
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
     func changeAccess(query : String) -> Bool {
            
            let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
