@@ -36,7 +36,20 @@ class DBHelper{
             print("data not saved")
         }
     }
-    
+    func addNewReview(object : String){
+        
+       
+        let newRev = NSEntityDescription.insertNewObject(forEntityName: "Review", into: context!) as! Review
+        newRev.review = object
+
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
     
     func userExist( query : String) -> Bool{
         
