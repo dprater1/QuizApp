@@ -6,6 +6,7 @@ target 'proj2' do
   use_frameworks!
 
 pod 'SideMenu'
+pod 'FBSDKLoginKit'
   # Pods for proj2
 
 end

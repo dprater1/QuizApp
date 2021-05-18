@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-proj2/Pods-proj2-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework
+${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework

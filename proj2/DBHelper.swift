@@ -21,7 +21,11 @@ class DBHelper{
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!) as! User
         user.username = object["username"]
         //print(user.username)
-        user.password = object["password"]
+        if object.index(forKey: "password") == nil {
+            print("creating fb user")
+        } else {
+            user.password = object["password"]
+        }
         user.totalAnswered = 0
         user.correctAnswered = 0
         user.subscribed = false
@@ -75,7 +79,7 @@ class DBHelper{
     }
     func fetchUser( query : String) -> User?{
         var neededUser : User?
-        
+        DBHelper.dataCheck = false
         var fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
         fetchReq.predicate = NSPredicate(format: "username == %@", query)
         do{
@@ -84,6 +88,7 @@ class DBHelper{
             for data in users{
                 if(data.username == query){
                     neededUser = data
+                    DBHelper.dataCheck = true
                     return neededUser
                 }
                 else {

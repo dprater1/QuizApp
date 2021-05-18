@@ -7,11 +7,13 @@
 
 import UIKit
 import CryptoKit
-
+import FBSDKLoginKit
 
 
 class LoginViewController: UIViewController {
     let ud = UserDefaults.standard
+    static let loginManager: LoginManager = LoginManager()
+    
     
     
     
@@ -52,7 +54,6 @@ class LoginViewController: UIViewController {
         let inputData = Data(inputString.utf8)
         let hashed = SHA256.hash(data: inputData)
         //print(hashed)
-    
         if(DBHelper.inst.validatePass(uName: uName.text!, uPass: String(describing: hashed))){
             ud.setValue(uName.text, forKey: "currUser")
             if(remSwitch.isOn){
@@ -92,6 +93,49 @@ class LoginViewController: UIViewController {
                 
             }
     }
-
-
+    @IBAction func fbButton(_ sender: Any) {
+    if AccessToken.current == nil {
+               //Session is not active
+               
+        LoginViewController.loginManager.logIn(permissions: ["public_profile","email"], from: self, handler: { result,error   in
+            if error != nil {
+            } else if result!.isCancelled {
+          print("login cancelled by user")
+            } else {
+                print("login successfully")
+                let token = result?.token?.tokenString
+                let req = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email, name"], tokenString: token, version: nil, httpMethod: .get)
+                req.start {(connection,result,error) in
+                    let fbDetails = result as! NSDictionary
+                    let email = fbDetails.value(forKey: "email")! as! String
+                    let emailArr = email.components(separatedBy: "@")
+                    let user = ["username" : emailArr[0]]
+                    self.ud.setValue(emailArr[0], forKey: "currUser")
+                    let usr = DBHelper.inst.fetchUser(query: emailArr[0])
+                    if DBHelper.dataCheck {
+                        if usr!.isBlocked {
+                            let Alert = UIAlertController(title: "Blocked", message: "Please contact an admin to unblock your account", preferredStyle: .alert)
+                            Alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                            self.present(Alert, animated: true, completion: nil)
+                        } else {
+                            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! WelcomeViewController
+                            self.present(wel, animated: true, completion: nil)
+                        }
+                    } else {
+                        DBHelper.inst.addNewUser(object: user)
+                        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let wel = sb.instantiateViewController(withIdentifier: "LoggedIn") as! WelcomeViewController
+                        self.present(wel, animated: true, completion: nil)
+                    }
+                }
+            }
+        })
+           } else {
+            print("you shouldn't be here")
+            LoginViewController.loginManager.logOut()
+            print("User logout succesfully")
+           }
+    }
+    
 }
