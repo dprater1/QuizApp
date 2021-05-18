@@ -18,13 +18,16 @@ class QuizEntranceViewController: UIViewController {
         super.viewDidLoad()
         currUser = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
         DBHelper.inst.getQuizAnswer(user: ud.string(forKey: "currUser") ?? "", quiz: ud.string(forKey: "currQuiz") ?? "unknownQuiz")
+        
         if(DBHelper.dataCheck){
             reviewButton.isHidden = false
             reviewButton.setTitle("Review best attempt", for: .normal)
             takeButton.setTitle("Retake Quiz", for: .normal)
             rankingButton.setTitle("View Rankings", for: .normal)
+            rankingButton.isHidden = false
         }
         else{
+            rankingButton.isHidden = true
             reviewButton.isHidden = true
             takeButton.setTitle("Take Quiz", for: .normal)
         }
