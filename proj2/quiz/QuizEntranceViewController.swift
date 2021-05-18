@@ -10,12 +10,13 @@ import UIKit
 class QuizEntranceViewController: UIViewController {
     let ud = UserDefaults.standard
     var currQuizAns : QuizAnswer?
-    
+    var currUser : User?
     @IBOutlet weak var rankingButton: UIButton!
     @IBOutlet weak var takeButton: UIButton!
     @IBOutlet weak var reviewButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        currUser = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
         DBHelper.inst.getQuizAnswer(user: ud.string(forKey: "currUser") ?? "", quiz: ud.string(forKey: "currQuiz") ?? "unknownQuiz")
         if(DBHelper.dataCheck){
             reviewButton.isHidden = false
@@ -26,6 +27,9 @@ class QuizEntranceViewController: UIViewController {
         else{
             reviewButton.isHidden = true
             takeButton.setTitle("Take Quiz", for: .normal)
+        }
+        if(currUser!.quizzesLeft == 0){
+            takeButton.isHidden = true
         }
     
         // Do any additional setup after loading the view.
