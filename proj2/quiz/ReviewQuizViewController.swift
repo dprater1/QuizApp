@@ -38,7 +38,7 @@ class ReviewQuizViewController: UIViewController {
     }
     func changeQuestion(){
         currQuest = currQuiz!.questions![questNum]
-        questionLabel.text = "question " + String(questNum + 1) + ": "  + currQuest!.question
+        questionLabel.text = "Question " + String(questNum + 1) + ": "  + currQuest!.question
         answer1.text = currQuest!.a
         answer2.text = currQuest!.b
         answer3.text = currQuest!.c
